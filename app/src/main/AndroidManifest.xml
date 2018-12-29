@@ -3,7 +3,7 @@
           package="ru.edu.ksu.mycity">
 
     <application
-            android:name="ru.edu.ksu.mycity.App"
+            android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -11,6 +11,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".HomeActivity">
+
+        </activity>
+        <activity android:name=".presentation.splashscreen.SplashScreen"
+                  android:theme="@style/NoToolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
