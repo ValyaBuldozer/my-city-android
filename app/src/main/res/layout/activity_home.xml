@@ -7,54 +7,181 @@
         android:layout_height="match_parent"
         tools:context=".presentation.home.view.activity.HomeActivity">
 
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <fragment
-                android:id="@+id/menu_rnd_route_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/menu_element_height"
-                android:name="ru.edu.ksu.mycity.presentation.home.view.fragments.HomeMenuFragment"
-                tools:layout="@layout/fragment_home_menu"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical">
 
-        <fragment
-                android:id="@+id/menu_routes_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/menu_element_height"
-                android:name="ru.edu.ksu.mycity.presentation.home.view.fragments.HomeMenuFragment"
-                tools:layout="@layout/fragment_home_menu"/>
-
-
-        <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/menu_element_height">
-
-            <fragment
-                    android:id="@+id/menu_places_fragment"
+            <android.support.v7.widget.CardView
+                    android:id="@+id/menu_element_near"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/menu_museums_fragment"
-                    android:name="ru.edu.ksu.mycity.presentation.home.view.fragments.HomeMenuFragment"
-                    tools:layout="@layout/fragment_home_menu"/>
+                    android:layout_height="@dimen/menu_element_height"
+                    android:layout_margin="@dimen/menu_element_margin"
+                    android:elevation="@dimen/menu_element_elevation">
 
-            <fragment
-                    android:id="@+id/menu_museums_fragment"
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/near_menu_background"
+                            android:scaleType="centerCrop"/>
+
+                    <ImageView
+                            android:id="@+id/near_menu_element_title_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/menu_element_title_height"
+                            android:background="@color/menu_element_title_background"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/menu_element_title_left_margin"
+                            android:text="@string/menu_element_near_title"
+                            android:textSize="@dimen/menu_element_title_size"
+                            android:textColor="@color/menu_element_title_color"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/near_menu_element_title_background"
+                            app:layout_constraintTop_toTopOf="@id/near_menu_element_title_background"
+                    />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/menu_element_routes"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/menu_places_fragment"
-                    android:name="ru.edu.ksu.mycity.presentation.home.view.fragments.HomeMenuFragment"
-                    tools:layout="@layout/fragment_home_menu"/>
+                    android:layout_height="@dimen/menu_element_height"
+                    android:layout_margin="@dimen/menu_element_margin"
+                    android:elevation="@dimen/menu_element_elevation">
 
-        </android.support.constraint.ConstraintLayout>
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-    </LinearLayout>
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/routes_menu_background"
+                            android:scaleType="centerCrop"/>
+
+                    <ImageView
+                            android:id="@+id/routes_menu_element_title_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/menu_element_title_height"
+                            android:background="@color/menu_element_title_background"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/menu_element_title_left_margin"
+                            android:text="@string/menu_element_routes_title"
+                            android:textSize="@dimen/menu_element_title_size"
+                            android:textColor="@color/menu_element_title_color"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/routes_menu_element_title_background"
+                            app:layout_constraintTop_toTopOf="@id/routes_menu_element_title_background"
+                    />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/menu_element_places"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_element_height"
+                    android:layout_margin="@dimen/menu_element_margin"
+                    android:elevation="@dimen/menu_element_elevation">
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/places_menu_background"
+                            android:scaleType="centerCrop"/>
+
+                    <ImageView
+                            android:id="@+id/places_menu_element_title_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/menu_element_title_height"
+                            android:background="@color/menu_element_title_background"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/menu_element_title_left_margin"
+                            android:text="@string/menu_element_places_title"
+                            android:textSize="@dimen/menu_element_title_size"
+                            android:textColor="@color/menu_element_title_color"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/places_menu_element_title_background"
+                            app:layout_constraintTop_toTopOf="@id/places_menu_element_title_background"
+                    />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/menu_element_museums"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_element_height"
+                    android:layout_margin="@dimen/menu_element_margin"
+                    android:elevation="@dimen/menu_element_elevation">
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/museums_menu_background"
+                            android:scaleType="centerCrop"/>
+
+                    <ImageView
+                            android:id="@+id/museums_menu_element_title_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/menu_element_title_height"
+                            android:background="@color/menu_element_title_background"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/menu_element_title_left_margin"
+                            android:text="@string/menu_element_museums_title"
+                            android:textSize="@dimen/menu_element_title_size"
+                            android:textColor="@color/menu_element_title_color"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintBottom_toBottomOf="@id/museums_menu_element_title_background"
+                            app:layout_constraintTop_toTopOf="@id/museums_menu_element_title_background"
+                    />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>
