@@ -2,9 +2,12 @@ package ru.edu.ksu.mycity.presentation.home.view
 
 import android.content.Context
 import android.content.Intent
+import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import ru.edu.ksu.mycity.R
+import ru.edu.ksu.mycity.databinding.ActivityHomeBinding
+import ru.edu.ksu.mycity.presentation.routes.view.RoutesScreenActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -13,10 +16,16 @@ class HomeActivity : AppCompatActivity() {
                 Intent(context, HomeActivity::class.java)
     }
 
+    private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
+        binding.homeMenuElementRoutes.setOnClickListener {
+            val intent = RoutesScreenActivity.createIntent(this)
+            startActivity(intent)
+        }
     }
 }

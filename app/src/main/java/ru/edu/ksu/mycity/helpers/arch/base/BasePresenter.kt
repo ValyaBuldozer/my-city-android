@@ -18,5 +18,9 @@ abstract class BasePresenter<VM : ViperViewModel> : ViperPresenter<VM> {
         androidComponent = null
     }
 
-    override fun isAttachView() = androidComponent != null
+    override fun isAttachedView() = androidComponent != null
+
+    override fun destroy() {
+
+    }
 }

@@ -8,7 +8,7 @@ interface ViperPresenter<VM : ViperViewModel> {
 
     fun detachView()
 
-    fun isAttachView() : Boolean
+    fun isAttachedView() : Boolean
 
     fun destroy()
 }

@@ -8,4 +8,9 @@
     <dimen name="menu_element_title_left_margin">10dp</dimen>
     <dimen name="menu_element_title_size">18dp</dimen>
 
+    <dimen name="default_item_height">68dp</dimen>
+    <dimen name="default_item_margin">10dp</dimen>
+    <dimen name="default_item_title_height">20dp</dimen>
+    <dimen name="default_item_title_size">15dp</dimen>
+
 </resources>

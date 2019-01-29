@@ -21,9 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.splashscreen.SplashScreen"
-                  android:theme="@style/NoToolbar">
-
+        <activity
+                android:name=".presentation.splashscreen.SplashScreen"
+                android:theme="@style/NoToolbar">
+        </activity>
+        <activity android:name=".presentation.routes.view.RoutesScreenActivity">
         </activity>
     </application>
 

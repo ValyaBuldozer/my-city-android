@@ -1,6 +1,9 @@
 package ru.edu.ksu.mycity
 
 import android.app.Application
+import android.os.Handler
+import com.squareup.picasso.OkHttp3Downloader
+import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
 import ru.edu.ksu.mycity.domain.network.cookie.CookieRepository
 import ru.edu.ksu.mycity.domain.network.service.NetworkService
@@ -34,11 +37,19 @@ class App : Application() {
             .readTimeout(SOCKET_TIMEOUT, TimeUnit.SECONDS)
             .cookieJar(cookieRepos)
             .build()
+
+        Picasso.setSingletonInstance(
+            Picasso.Builder(applicationContext)
+                .downloader(OkHttp3Downloader(okHttpClient))
+                .build()
+        )
     }
 
-    fun getNetworkService() : NetworkService =
+    fun getNetworkService(): NetworkService =
         NetworkServiceImpl(okHttpClient)
 
-    fun getCookieRepository() : CookieRepository =
+    fun getCookieRepository(): CookieRepository =
         CookieRepository()
+
+    val handlerUi = Handler()
 }
