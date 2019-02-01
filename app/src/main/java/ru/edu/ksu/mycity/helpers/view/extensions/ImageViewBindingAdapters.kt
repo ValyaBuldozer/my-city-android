@@ -3,7 +3,9 @@ package ru.edu.ksu.mycity.helpers.view.extensions
 import android.databinding.BindingAdapter
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
+import okhttp3.HttpUrl
 import ru.edu.ksu.mycity.R
+import ru.edu.ksu.mycity.domain.network.NetworkConfig
 
 @BindingAdapter("image_url")
 fun ImageView.imageUrl(imgUrl: String) {
@@ -12,6 +14,21 @@ fun ImageView.imageUrl(imgUrl: String) {
         .placeholder(R.drawable.ic_route_placeholder)
         .error(R.drawable.ic_route_placeholder)
         .into(this)
+}
+
+@BindingAdapter("server_image_url")
+fun ImageView.serverImageUrl(imgUrl: String) {
+    val url = HttpUrl.Builder()
+        .scheme(NetworkConfig.SCHEME.value)
+        .host(NetworkConfig.HOST.value)
+        .port(NetworkConfig.PORT.value.toInt())
+        .addPathSegment(imgUrl)
+        .build()
+
+    Picasso.get()
+        .load(url.url().toString())
+        .into(this)
+
 }
 
 @BindingAdapter("local_image_src")

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityHomeBinding
+import ru.edu.ksu.mycity.presentation.places.view.PlacesScreenActivity
 import ru.edu.ksu.mycity.presentation.routes.view.RoutesScreenActivity
 
 class HomeActivity : AppCompatActivity() {
@@ -23,9 +24,16 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
-        binding.homeMenuElementRoutes.setOnClickListener {
-            val intent = RoutesScreenActivity.createIntent(this)
-            startActivity(intent)
+        binding.apply {
+            homeMenuElementRoutes.setOnClickListener {
+                val intent = RoutesScreenActivity.createIntent(this@HomeActivity)
+                this@HomeActivity.startActivity(intent)
+            }
+
+            homeMenuElementPlaces.setOnClickListener {
+                val intent = PlacesScreenActivity.createIntent(this@HomeActivity)
+                this@HomeActivity.startActivity(intent)
+            }
         }
     }
 }

@@ -2,14 +2,19 @@ package ru.edu.ksu.mycity.domain.network.command
 
 import android.util.Log
 import okhttp3.*
+import ru.edu.ksu.mycity.domain.network.NetworkConfig
 import ru.edu.ksu.mycity.domain.network.command.common.RpcCommand
 import java.io.IOException
 
 class PlacesRequestCommand() : RpcCommand {
 
     override fun execute(okHttpClient: OkHttpClient, callback: Callback) {
-        // FIXME("remove hardcode")
-        val httpUrl = HttpUrl.parse("http://192.168.0.2:5000/places")
+        val httpUrl = HttpUrl.Builder()
+            .scheme(NetworkConfig.SCHEME.value)
+            .host(NetworkConfig.HOST.value)
+            .port(NetworkConfig.PORT.value.toInt())
+            .addPathSegment(NetworkConfig.PLACES_PATH.value)
+            .build()
 
         val request = Request.Builder()
             .url(httpUrl)

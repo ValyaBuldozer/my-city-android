@@ -8,15 +8,12 @@ import java.io.IOException
 
 class RoutesRequestCommand() : RpcCommand {
     override fun execute(okHttpClient: OkHttpClient, callback: Callback) {
-//        val httpUrl = HttpUrl.Builder()
-//            .scheme(NetworkConfig.SCHEME.value)
-//            .host(NetworkConfig.HOST.value)
-//            .port(5000)
-//            .addPathSegment(NetworkConfig.ROUTES_PATH.value)
-//            .build()
-
-        // FIXME("remove hardcode")
-        val httpUrl = HttpUrl.parse("http://192.168.0.2:5000/routes")
+        val httpUrl = HttpUrl.Builder()
+            .scheme(NetworkConfig.SCHEME.value)
+            .host(NetworkConfig.HOST.value)
+            .port(NetworkConfig.PORT.value.toInt())
+            .addPathSegment(NetworkConfig.ROUTES_PATH.value)
+            .build()
 
         val request = Request.Builder()
             .url(httpUrl)

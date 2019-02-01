@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".presentation.routes.view.RoutesScreenActivity">
         </activity>
+        <activity android:name=".presentation.places.view.PlacesScreenActivity">
+        </activity>
     </application>
 
 </manifest>
