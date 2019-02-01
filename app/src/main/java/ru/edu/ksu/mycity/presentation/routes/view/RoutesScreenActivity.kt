@@ -10,6 +10,7 @@ import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
@@ -43,7 +44,6 @@ class RoutesScreenActivity : BaseActivity<RoutesVmContract.Presenter, RoutesVmCo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_routes_screen)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_routes_screen)
         binding.setLifecycleOwner(this@RoutesScreenActivity)
@@ -53,7 +53,7 @@ class RoutesScreenActivity : BaseActivity<RoutesVmContract.Presenter, RoutesVmCo
             setItems(viewModel.routes.value ?: emptyList())
         }
 
-        val linearLayoutManager = LinearLayoutManager(this)
+        val linearLayoutManager = GridLayoutManager(this, 2)
 
         binding.routesScreenRv.apply {
             adapter = routesAdapter

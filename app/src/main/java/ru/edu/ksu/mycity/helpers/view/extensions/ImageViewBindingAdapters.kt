@@ -13,3 +13,11 @@ fun ImageView.imageUrl(imgUrl: String) {
         .error(R.drawable.ic_route_placeholder)
         .into(this)
 }
+
+@BindingAdapter("local_image_src")
+fun ImageView.localImageSrc(drawableId: Int) {
+    Picasso.get()
+        .load(drawableId)
+        .error(R.drawable.image_placeholder)
+        .into(this)
+}
