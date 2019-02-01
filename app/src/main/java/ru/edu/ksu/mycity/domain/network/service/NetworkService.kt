@@ -6,4 +6,5 @@ interface NetworkService {
 
     fun getRoutes(callback: Callback)
 
+    fun getPlaces(callback: Callback)
 }
