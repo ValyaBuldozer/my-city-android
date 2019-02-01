@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">myCity</string>
+    <string name="app_name">My Kostroma</string>
+
+    <!-- Home menu items -->
+    <string name="menu_element_near_title">Что рядом?</string>
+    <string name="menu_element_routes_title">Маршруты</string>
+    <string name="menu_element_places_title">Места</string>
+    <string name="menu_element_museums_title">Музеи</string>
 </resources>

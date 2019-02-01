@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="title" type="String"/>
+        <variable name="imagePath" type="String"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_item_height"
+            android:layout_margin="@dimen/default_item_margin"
+            android:background="#ffffff">
+
+        <ImageView
+                android:id="@+id/item_default_image_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintDimensionRatio="1:1"
+                server_image_url="@{imagePath}"
+                tools:src="@drawable/ic_route_placeholder"/>
+
+        <TextView
+                android:id="@+id/item_default_text_view"
+                android:text="@{title}"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/default_item_title_height"
+                android:textSize="@dimen/default_item_title_size"
+                app:layout_constraintLeft_toRightOf="@+id/item_default_image_view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingLeft="@dimen/menu_element_title_left_margin"
+                tools:text="Text here"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

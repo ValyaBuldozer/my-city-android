@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract.ViewModel.State"/>
+
+        <variable
+                name="viewModel"
+                type="ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract.ViewModel"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/default_activity_background"
+            tools:context=".presentation.places.view.PlacesScreenActivity">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/places_screen_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.state == State.DATA ? View.VISIBLE : View.INVISIBLE}"
+                tools:listitem="@layout/item_default"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
