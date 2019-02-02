@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ItemDefaultBinding
-import ru.edu.ksu.mycity.entity.presentation.Place
+import ru.edu.ksu.mycity.entity.presentation.PlaceInfo
 import ru.edu.ksu.mycity.helpers.presentation.BaseAdapter
 
-class PlacesScreenAdapter(val clickListener: (place: Place) -> Unit) : BaseAdapter<PlacesScreenAdapter.ViewHolder, Place>() {
+class PlacesScreenAdapter(val clickListener: (placeInfo: PlaceInfo) -> Unit) : BaseAdapter<PlacesScreenAdapter.ViewHolder, PlaceInfo>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
         DataBindingUtil.bind(
@@ -25,10 +25,10 @@ class PlacesScreenAdapter(val clickListener: (place: Place) -> Unit) : BaseAdapt
 
     class ViewHolder(val bindView: ItemDefaultBinding) : RecyclerView.ViewHolder(bindView.root) {
 
-        fun bind(place: Place) {
+        fun bind(placeInfo: PlaceInfo) {
             with(bindView){
-                this.title = place.name
-                this.imagePath = place.logoImagePath
+                this.title = placeInfo.name
+                this.imagePath = placeInfo.logoImagePath
                 executePendingBindings()
             }
         }

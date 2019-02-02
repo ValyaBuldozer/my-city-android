@@ -6,11 +6,10 @@ import ru.edu.ksu.mycity.entity.presentation.Route
 data class RouteGsonModel (
     @SerializedName("route_id") val id: Int,
     @SerializedName("route_name") val name: String,
-    @SerializedName("route_image_path") val imagePath: String,
-    @SerializedName("route_description") val description: String
+    @SerializedName("route_image_path") val imagePath: String
 ) : GsonModel<Route> {
 
     override fun getPresentation() = Route(
-        id, name, imagePath, description
+        id, name, imagePath
     )
 }

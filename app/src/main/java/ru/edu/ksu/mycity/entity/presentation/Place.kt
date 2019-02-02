@@ -6,9 +6,10 @@ import ru.edu.ksu.mycity.helpers.arch.parcelable.ParcelableModel
 data class Place(
     val id : Int,
     val name : String,
-    val description : String,
     val logoImagePath : String,
-    val backgroundImagePath : String ) : ParcelableModel {
+    val backgroundImagePath : String,
+    val description : String,
+    val questionTitle : String) : ParcelableModel {
 
     companion object {
         @JvmField
@@ -18,16 +19,18 @@ data class Place(
     private constructor(parcel: Parcel) : this(
         id = parcel.readInt(),
         name = parcel.readString(),
-        description = parcel.readString(),
         logoImagePath = parcel.readString(),
-        backgroundImagePath = parcel.readString()
+        backgroundImagePath = parcel.readString(),
+        description = parcel.readString(),
+        questionTitle = parcel.readString()
     )
 
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeInt(id)
         writeString(name)
-        writeString(description)
         writeString(logoImagePath)
         writeString(backgroundImagePath)
+        writeString(description)
+        writeString(questionTitle)
     }
 }
