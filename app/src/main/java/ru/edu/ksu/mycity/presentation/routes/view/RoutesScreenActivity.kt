@@ -1,21 +1,17 @@
 package ru.edu.ksu.mycity.presentation.routes.view
 
-import android.app.Activity
 import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityRoutesScreenBinding
-import ru.edu.ksu.mycity.entity.presentation.Route
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract
 import ru.edu.ksu.mycity.presentation.routes.interactor.RoutesScreenInteractor
@@ -38,7 +34,7 @@ class RoutesScreenActivity : BaseActivity<RoutesVmContract.Presenter, RoutesVmCo
     private lateinit var binding: ActivityRoutesScreenBinding
     private lateinit var routesAdapter: RoutesScreenAdapter
 
-    private fun onRouteItemClick(route: Route) {
+    private fun onRouteItemClick(routeInfo: RouteInfo) {
 
     }
 

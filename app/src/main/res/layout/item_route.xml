@@ -6,7 +6,7 @@
     <data>
         <variable
                 name="viewModel"
-                type="ru.edu.ksu.mycity.entity.presentation.Route"/>
+                type="ru.edu.ksu.mycity.entity.presentation.RouteInfo"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -43,7 +43,7 @@
                 app:layout_constraintTop_toTopOf="@+id/item_route_title_background"
                 app:layout_constraintRight_toRightOf="@+id/item_route_title_background"
                 app:layout_constraintLeft_toLeftOf="@+id/item_route_title_background"
-                tools:text="Default route"/>
+                tools:text="Default routeInfo"/>
 
     </android.support.constraint.ConstraintLayout>
 

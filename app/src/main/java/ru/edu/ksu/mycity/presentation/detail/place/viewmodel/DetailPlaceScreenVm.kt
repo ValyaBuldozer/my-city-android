@@ -2,6 +2,7 @@ package ru.edu.ksu.mycity.presentation.detail.place.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import ru.edu.ksu.mycity.entity.presentation.Place
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BaseViewModel
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
@@ -15,9 +16,18 @@ class DetailPlaceScreenVm : BaseViewModel(), DetailPlaceVmContract.ViewModel {
     override var errorMessage: MutableLiveData<String?> =
         MutableLiveData<String?>().apply { value = "" }
 
-    override var place: MutableLiveData<Place?> =
-        MutableLiveData<Place?>().apply { value = null }
-
     override var showDescription: MutableLiveData<Boolean> =
         MutableLiveData<Boolean>().apply { value = false }
+
+    override var placeTitle: MutableLiveData<String?> =
+        MutableLiveData<String?>().apply { value = "" }
+
+    override var placeImagePath: MutableLiveData<String?> =
+        MutableLiveData<String?>().apply { value = "" }
+
+    override var placeDescription: MutableLiveData<String?> =
+        MutableLiveData<String?>().apply { value = "" }
+
+    override var placeRoutes: MutableLiveData<List<RouteInfo>?> =
+        MutableLiveData<List<RouteInfo>?>().apply { value = emptyList() }
 }

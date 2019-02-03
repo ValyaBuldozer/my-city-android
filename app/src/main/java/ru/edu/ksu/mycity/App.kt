@@ -40,6 +40,7 @@ class App : Application() {
 
         Picasso.setSingletonInstance(
             Picasso.Builder(applicationContext)
+                .loggingEnabled(true)
                 .downloader(OkHttp3Downloader(okHttpClient))
                 .build()
         )

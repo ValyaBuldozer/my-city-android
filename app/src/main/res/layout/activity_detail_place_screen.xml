@@ -49,6 +49,7 @@
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
                             android:adjustViewBounds="true"
+                            server_image_url="@{viewModel.placeImagePath}"
                             android:visibility="@{viewModel.state == State.DATA ? View.VISIBLE : View.INVISIBLE}"
                             tools:src="@drawable/places_menu_background"
                     />
@@ -63,6 +64,7 @@
 
                         <TextView
                                 android:id="@+id/detail_place_screen_title"
+                                android:text="@{viewModel.placeTitle}"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textAlignment="center"
@@ -100,9 +102,17 @@
                         android:paddingRight="30dp"
                         android:paddingLeft="30dp"
                         android:textSize="@dimen/default_text_size"
-                        android:visibility="@{viewModel.showDescription ? View.VISIBLE : View.INVISIBLE}"
-                        android:text="@{viewModel.place.description}"
+                        android:visibility="@{viewModel.showDescription ? View.VISIBLE : View.GONE}"
+                        android:text="@{viewModel.placeDescription}"
                 />
+
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        routes_list="@{viewModel.placeRoutes}"/>
 
             </LinearLayout>
 

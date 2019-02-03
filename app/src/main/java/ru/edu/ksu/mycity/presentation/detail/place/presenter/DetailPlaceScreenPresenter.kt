@@ -33,12 +33,22 @@ class DetailPlaceScreenPresenter(
     }
 
     override fun obtainedPlaceDetail(place: Place?, error: Throwable?) {
-        if (error == null) {
-            vm.state.value = State.DATA
-            vm.place.value = place
+        if (error == null && place != null) {
+            with(vm) {
+                state.value = State.DATA
+                placeTitle.value = place.name
+                placeDescription.value = place.description
+                placeImagePath.value = place.backgroundImagePath
+                placeRoutes.value = place.routes
+            }
         } else {
-            vm.state.value = State.ERROR
-            vm.place.value = null
+            with (vm) {
+                state.value = State.ERROR
+                placeTitle.value = null
+                placeDescription.value = null
+                placeImagePath.value = null
+                placeRoutes.value = emptyList()
+            }
         }
     }
 

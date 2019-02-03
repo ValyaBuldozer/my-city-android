@@ -1,15 +1,15 @@
 package ru.edu.ksu.mycity.entity.gson
 
 import com.google.gson.annotations.SerializedName
-import ru.edu.ksu.mycity.entity.presentation.Route
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 
-data class RouteGsonModel (
+data class RouteInfoGsonModel (
     @SerializedName("route_id") val id: Int,
     @SerializedName("route_name") val name: String,
-    @SerializedName("route_image_path") val imagePath: String
-) : GsonModel<Route> {
+    @SerializedName("route_logo_path") val imagePath: String
+) : GsonModel<RouteInfo> {
 
-    override fun getPresentation() = Route(
+    override fun getPresentation() = RouteInfo(
         id, name, imagePath
     )
 }

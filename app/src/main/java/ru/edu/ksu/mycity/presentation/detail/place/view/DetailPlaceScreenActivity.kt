@@ -1,18 +1,14 @@
 package ru.edu.ksu.mycity.presentation.detail.place.view
 
-import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailPlaceScreenBinding
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
-import ru.edu.ksu.mycity.helpers.view.extensions.imageUrl
-import ru.edu.ksu.mycity.helpers.view.extensions.serverImageUrl
 import ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContract
 import ru.edu.ksu.mycity.presentation.detail.place.interactor.DetailPlaceScreenInteractor
 import ru.edu.ksu.mycity.presentation.detail.place.presenter.DetailPlaceScreenPresenter
@@ -53,12 +49,12 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
     override fun createViewModel(): DetailPlaceVmContract.ViewModel = DetailPlaceScreenVm()
 
     override fun createSubscribers() {
-        viewModel.place.observe(this@DetailPlaceScreenActivity, Observer { place ->
-            place?.let {
-                this.binding.detailPlaceScreenTitle.text = place.name
-                this.binding.detailPlaceScreenImage.serverImageUrl(place.backgroundImagePath)
-            }
-        })
+//        viewModel.place.observe(this@DetailPlaceScreenActivity, Observer { place ->
+//            place?.let {
+//                //this.binding.detailPlaceScreenTitle.text = place.name
+//                this.binding.detailPlaceScreenImage.serverImageUrl(place.backgroundImagePath)
+//            }
+//        })
     }
 
     private fun showDescriptionClickHandler(view: View) {
