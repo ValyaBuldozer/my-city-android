@@ -8,5 +8,5 @@ interface NetworkService {
 
     fun getPlaces(callback: Callback)
 
-    fun getPlaceFullInfo(callback: Callback, placeId: Int)
+    fun getPlaceFullInfo(placeId: Int, callback: Callback)
 }

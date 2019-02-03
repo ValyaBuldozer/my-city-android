@@ -9,11 +9,7 @@ interface PlacesVmContract {
 
     interface ViewModel : ViperViewModel {
 
-        enum class State {
-            INITIAL, LOADING, DATA,ERROR
-        }
-
-        var state: MutableLiveData<State>
+        var state: MutableLiveData<ViperViewModel.State>
 
         var errorMessage: MutableLiveData<String?>
 

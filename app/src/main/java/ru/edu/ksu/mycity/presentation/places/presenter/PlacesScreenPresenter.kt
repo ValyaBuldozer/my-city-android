@@ -7,7 +7,7 @@ import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.presentation.places.constracts.PlacesInteractorContract
 import ru.edu.ksu.mycity.presentation.places.constracts.PlacesRouterContract
 import ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract
-import ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract.ViewModel.State
+import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
 
 class PlacesScreenPresenter(
@@ -47,6 +47,6 @@ class PlacesScreenPresenter(
     }
 
     override fun onPlaceSelected(placeInfo: PlaceInfo) {
-        router.showPlaceDetailInfo(placeInfo)
+        router.showPlaceDetailInfo(androidComponent!!, placeInfo)
     }
 }

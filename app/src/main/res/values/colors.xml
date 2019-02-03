@@ -3,8 +3,15 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
     <color name="menu_element_title_background">#60000000</color>
     <color name="menu_element_title_color">#ffffff</color>
+
     <color name="default_activity_background">#FFF7E2</color>
+    <color name="default_button_background">#2EB7FC</color>
+    <color name="default_button_text_color">#FFFFFF</color>
+
+    <color name="place_detail_title_background">#90FFFFFF</color>
+
 
 </resources>

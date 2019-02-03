@@ -1,12 +1,12 @@
-package ru.edu.ksu.mycity.presentation.routes.contracts
+package ru.edu.ksu.mycity.presentation.detail.place.contracts
 
 import android.arch.lifecycle.MutableLiveData
-import ru.edu.ksu.mycity.entity.presentation.Route
+import ru.edu.ksu.mycity.entity.presentation.Place
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperPresenter
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
-interface RoutesVmContract {
+interface DetailPlaceVmContract {
 
     interface ViewModel : ViperViewModel {
 
@@ -14,10 +14,15 @@ interface RoutesVmContract {
 
         var errorMessage: MutableLiveData<String?>
 
-        var routes: MutableLiveData<List<Route>>
+        var place: MutableLiveData<Place?>
+
+        var showDescription: MutableLiveData<Boolean>
+        
     }
 
     interface Presenter : ViperPresenter<ViewModel> {
-        fun onRouteSelected(route: Route)
+
+        fun onShowDescriptionClick()
+
     }
 }

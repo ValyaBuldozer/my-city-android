@@ -16,7 +16,7 @@ class NetworkServiceImpl(private val okHttpClient: OkHttpClient) : NetworkServic
         PlacesRequestCommand().execute(okHttpClient, callback)
     }
 
-    override fun getPlaceFullInfo(callback: Callback, placeId: Int) {
+    override fun getPlaceFullInfo(placeId: Int, callback: Callback) {
         PlaceFullRequestCommand(placeId).execute(okHttpClient, callback)
     }
 }

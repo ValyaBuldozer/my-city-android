@@ -7,7 +7,7 @@ import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesInteractorContract
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesRouterContract
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract
-import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract.ViewModel.State
+import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
 class RoutesScreenPresenter(
     val interactor: RoutesInteractorContract.Interactor,

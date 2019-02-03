@@ -4,7 +4,7 @@ import android.arch.lifecycle.MutableLiveData
 import ru.edu.ksu.mycity.entity.presentation.Route
 import ru.edu.ksu.mycity.helpers.arch.base.BaseViewModel
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract
-import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract.ViewModel.State
+import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
 class RoutesScreenViewModel() : BaseViewModel(), RoutesVmContract.ViewModel {
     override var state: MutableLiveData<State> =
