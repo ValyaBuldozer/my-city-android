@@ -18,5 +18,9 @@
     <dimen name="detail_info_header_height">210dp</dimen>
     <dimen name="detail_info_header_control_width">170dp</dimen>
     <dimen name="detail_info_header_control_margin_right">60dp</dimen>
+    <dimen name="detail_info_side_margin">15dp</dimen>
+    <dimen name="detail_info_item_spacing">15dp</dimen>
+    <dimen name="detail_info_category_height">40dp</dimen>
+    <dimen name="detail_info_category_title_size">20sp</dimen>
 
 </resources>

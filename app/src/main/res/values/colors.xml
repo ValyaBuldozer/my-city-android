@@ -13,5 +13,6 @@
 
     <color name="place_detail_title_background">#90FFFFFF</color>
 
+    <color name="detail_info_category_text_color">#FFFFFF</color>
 
 </resources>

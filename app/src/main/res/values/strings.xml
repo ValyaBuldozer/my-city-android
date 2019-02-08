@@ -9,4 +9,5 @@
 
     <string name="detail_info_button_title_show">Подробнее</string>
     <string name="detail_info_button_title_hide">Скрыть</string>
+    <string name="detail_info_routes_title">Маршруты</string>
 </resources>
