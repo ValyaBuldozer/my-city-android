@@ -7,11 +7,8 @@ import ru.edu.ksu.mycity.helpers.arch.contracts.ViperRouter
 interface RoutesRouterContract {
 
     interface Router : ViperRouter<Presenter> {
-
-        fun showRouteInfo(androidComponent: AndroidComponent, routeInfo: RouteInfo)
+        fun showRouteInfo(androidComponent: AndroidComponent, routeInfo: RouteInfo, placeId: Int)
     }
 
-    interface Presenter : ViperRouter.Listener {
-
-    }
+    interface Presenter : ViperRouter.Listener {}
 }

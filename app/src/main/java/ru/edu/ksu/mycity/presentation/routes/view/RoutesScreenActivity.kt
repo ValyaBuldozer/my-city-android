@@ -35,7 +35,7 @@ class RoutesScreenActivity : BaseActivity<RoutesVmContract.Presenter, RoutesVmCo
     private lateinit var routesAdapter: RoutesScreenAdapter
 
     private fun onRouteItemClick(routeInfo: RouteInfo) {
-
+        presenter.onRouteSelected(routeInfo)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -48,14 +48,7 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
 
     override fun createViewModel(): DetailPlaceVmContract.ViewModel = DetailPlaceScreenVm()
 
-    override fun createSubscribers() {
-//        viewModel.place.observe(this@DetailPlaceScreenActivity, Observer { place ->
-//            place?.let {
-//                //this.binding.detailPlaceScreenTitle.text = place.name
-//                this.binding.detailPlaceScreenImage.serverImageUrl(place.backgroundImagePath)
-//            }
-//        })
-    }
+    override fun createSubscribers() {   }
 
     private fun showDescriptionClickHandler(view: View) {
         presenter.onShowDescriptionClick()
