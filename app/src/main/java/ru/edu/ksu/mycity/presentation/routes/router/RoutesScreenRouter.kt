@@ -7,9 +7,9 @@ import ru.edu.ksu.mycity.presentation.detail.route.view.DetailRouteScreenActivit
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesRouterContract
 
 class RoutesScreenRouter : RoutesRouterContract.Router, BaseRouter<RoutesRouterContract.Presenter>() {
-    override fun showRouteInfo(androidComponent: AndroidComponent, routeInfo: RouteInfo, placeId: Int) {
+    override fun showRouteInfo(androidComponent: AndroidComponent, routeInfo: RouteInfo) {
         val activity = androidComponent.activity
-        val intent = DetailRouteScreenActivity.createIntent(activity, placeId, routeInfo)
+        val intent = DetailRouteScreenActivity.createIntent(activity, routeInfo)
         activity.startActivity(intent)
     }
 

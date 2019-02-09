@@ -16,13 +16,13 @@
         <variable
                 name="viewModel"
                 type="ru.edu.ksu.mycity.presentation.detail.route.contracts.DetailRouteVmContract.ViewModel"/>
-    </data>
+        </data>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/default_activity_background"
-            android:visibility="@{viewModel.state == State.DATA ? View.VISIBLE : View.INVISIBLE}">
+    >
 
         <ProgressBar
                 android:layout_width="wrap_content"
@@ -38,7 +38,9 @@
             <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.state == State.DATA ? View.VISIBLE : View.INVISIBLE}"
+            >
 
                 <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
@@ -95,6 +97,55 @@
                     </android.support.constraint.ConstraintLayout>
 
                 </android.support.constraint.ConstraintLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/detail_info_category_height"
+                        android:orientation="horizontal"
+                        android:layout_margin="@dimen/detail_info_side_margin"
+                        android:layout_weight="100">
+
+                    <LinearLayout
+                            android:id="@+id/detail_route_prev_btn"
+                            android:layout_width="0dp"
+                            android:layout_weight="50"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:background="@{viewModel.prevBtnEnabled ? @drawable/detail_btn_enabled_shape : @drawable/detail_btn_disabled_shape}"
+                            android:layout_marginRight="5dp"
+                            android:clickable="@{viewModel.prevBtnEnabled}"
+                            tools:background="@drawable/detail_btn_enabled_shape"
+                    >
+
+                        <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_left_arr"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/detail_route_next_btn"
+                            android:layout_width="0dp"
+                            android:layout_weight="50"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:background="@{viewModel.nextBtnEnabled ? @drawable/detail_btn_enabled_shape : @drawable/detail_btn_disabled_shape}"
+                            android:clickable="@{viewModel.nextBtnEnabled}"
+                            tools:background="@drawable/detail_btn_enabled_shape"
+                    >
+
+                        <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arr"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <TextView
                         android:id="@+id/detail_route_screen_description"

@@ -45,7 +45,7 @@ class RoutesScreenPresenter(
     }
 
     override fun onRouteSelected(routeInfo: RouteInfo) {
-        router.showRouteInfo(androidComponent!!, routeInfo, routeInfo.places.first())
+        router.showRouteInfo(androidComponent!!, routeInfo)
     }
 
 }

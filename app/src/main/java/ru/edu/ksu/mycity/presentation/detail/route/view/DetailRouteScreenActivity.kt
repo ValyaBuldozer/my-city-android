@@ -3,7 +3,6 @@ package ru.edu.ksu.mycity.presentation.detail.route.view
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import ru.edu.ksu.mycity.App
@@ -23,16 +22,27 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
         const val PLACE_ID = "PLACE_ID"
         const val ROUTE = "ROUTE"
 
-        fun createIntent(context: Context, placeId: Int, route: RouteInfo) =
+        fun createIntent(context: Context, route: RouteInfo, placeId: Int) =
                 Intent(context, DetailRouteScreenActivity::class.java).apply {
                     putExtra(PLACE_ID, placeId)
                     putExtra(ROUTE, route)
                 }
+
+        fun createIntent(context: Context, route: RouteInfo) =
+                Intent(context, DetailRouteScreenActivity::class.java).apply {
+                    putExtra(ROUTE, route)
+                }
     }
+
+    private lateinit var routeInfo : RouteInfo
+    private var initPlaceId : Int = 0
 
     lateinit var binding : ActivityDetailRouteScreenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        routeInfo = intent.extras.getParcelable(ROUTE)
+        initPlaceId = intent.extras.getInt(PLACE_ID, routeInfo.places.first())
+
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail_route_screen)
@@ -40,21 +50,35 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
         binding.viewModel = viewModel
 
         binding.detailRouteScreenShowButton.setOnClickListener(this::showDescriptionHandler)
+        binding.detailRouteNextBtn.setOnClickListener(this::nextPlaceHandler)
+        binding.detailRoutePrevBtn.setOnClickListener(this::prevPlaceHandler)
     }
 
-    fun showDescriptionHandler(view: View) {
+    private fun showDescriptionHandler(view: View) {
         presenter.onShowDescriptionClick()
+    }
+
+    private fun nextPlaceHandler(view: View) {
+        presenter.nextPlaceHandler()
+    }
+
+    private fun prevPlaceHandler(view: View) {
+        presenter.prevPlaceHandler()
     }
 
     override fun createPresenter(): DetailRouteVmContract.Presenter =
         DetailRouteScreenPresenter(
             DetailRouteScreenInteractor(App.get().getNetworkService()),
             DetailRoutesScreenRouter(),
-            intent.extras.getInt(PLACE_ID)
+            initPlaceId,
+            routeInfo
         )
 
     override fun createViewModel(): DetailRouteVmContract.ViewModel =
-        DetailRouteScreenViewModel()
+        DetailRouteScreenViewModel(
+            initPlaceId,
+            routeInfo.places
+        )
 
     override fun createSubscribers() { }
 }

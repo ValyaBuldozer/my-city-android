@@ -22,5 +22,6 @@
     <dimen name="detail_info_item_spacing">15dp</dimen>
     <dimen name="detail_info_category_height">40dp</dimen>
     <dimen name="detail_info_category_title_size">20sp</dimen>
+    <dimen name="detail_info_category_corner_radius">10dp</dimen>
 
 </resources>
