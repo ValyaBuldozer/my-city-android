@@ -9,8 +9,8 @@ import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ItemDefaultBinding
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 
-@BindingAdapter("routes_list")
-fun LinearLayout.bindRoutesList(routes: List<RouteInfo>) {
+@BindingAdapter(value = ["routes_list", "route_click_handler"], requireAll = true)
+fun LinearLayout.bindRoutesList(routes: List<RouteInfo>, clickHandler: (routeInfo : RouteInfo) -> Unit) {
 
     this.removeAllViews()
 
@@ -26,6 +26,9 @@ fun LinearLayout.bindRoutesList(routes: List<RouteInfo>) {
         ).apply {
             imagePath = routeInfo.imagePath
             title = routeInfo.name
+            setOnClickListener {
+                clickHandler(routeInfo)
+            }
         }
     }
 }

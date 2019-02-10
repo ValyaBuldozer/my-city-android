@@ -1,5 +1,7 @@
 package ru.edu.ksu.mycity.presentation.detail.place.contracts
 
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
+import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperRouter
 
 interface DetailPlaceRouterContract {
@@ -9,6 +11,8 @@ interface DetailPlaceRouterContract {
     }
 
     interface Router : ViperRouter<Presenter> {
-        fun backToPlacesList()
+        fun backToPlacesList(androidComponent: AndroidComponent)
+
+        fun showRoutePlace(androidComponent: AndroidComponent, routeInfo: RouteInfo, placeId: Int)
     }
 }

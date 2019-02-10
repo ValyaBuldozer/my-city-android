@@ -75,4 +75,8 @@ class DetailRouteScreenPresenter(
             interactor.obtainRoutePlace(routeInfo.places[prevPlaceIndex])
         }
     }
+
+    override fun onShowRouteClick(routeInfo: RouteInfo) {
+        router.showRouteDetail(androidComponent!!, routeInfo)
+    }
 }

@@ -31,5 +31,7 @@ interface DetailPlaceVmContract {
 
         fun onShowDescriptionClick()
 
+        fun onRouteClick(routeInfo: RouteInfo)
+
     }
 }

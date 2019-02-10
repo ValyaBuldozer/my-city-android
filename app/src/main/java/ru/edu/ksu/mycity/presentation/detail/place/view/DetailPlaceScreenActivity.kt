@@ -1,5 +1,6 @@
 package ru.edu.ksu.mycity.presentation.detail.place.view
 
+import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -9,6 +10,7 @@ import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailPlaceScreenBinding
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
+import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindRoutesList
 import ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContract
 import ru.edu.ksu.mycity.presentation.detail.place.interactor.DetailPlaceScreenInteractor
 import ru.edu.ksu.mycity.presentation.detail.place.presenter.DetailPlaceScreenPresenter
@@ -37,6 +39,7 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
         binding.viewModel = viewModel
 
         binding.detailPlaceScreenShowButton.setOnClickListener(this::showDescriptionClickHandler)
+
     }
 
     override fun createPresenter(): DetailPlaceVmContract.Presenter =
@@ -48,7 +51,15 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
 
     override fun createViewModel(): DetailPlaceVmContract.ViewModel = DetailPlaceScreenVm()
 
-    override fun createSubscribers() {   }
+    override fun createSubscribers() {
+        viewModel.placeRoutes.observe(this, Observer { routeList ->
+            routeList?.let {
+                binding.detailPlaceScreenRoutes.bindRoutesList(routeList) { routeInfo ->
+                    presenter.onRouteClick(routeInfo)
+                }
+            }
+        })
+    }
 
     private fun showDescriptionClickHandler(view: View) {
         presenter.onShowDescriptionClick()

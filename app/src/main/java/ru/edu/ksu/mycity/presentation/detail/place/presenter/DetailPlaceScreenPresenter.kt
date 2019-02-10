@@ -1,6 +1,7 @@
 package ru.edu.ksu.mycity.presentation.detail.place.presenter
 
 import ru.edu.ksu.mycity.entity.presentation.Place
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BasePresenter
 import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
@@ -54,5 +55,9 @@ class DetailPlaceScreenPresenter(
 
     override fun onShowDescriptionClick() {
         vm.showDescription.value = vm.showDescription.value != true
+    }
+
+    override fun onRouteClick(routeInfo: RouteInfo) {
+        router.showRoutePlace(androidComponent!!, routeInfo, placeId)
     }
 }

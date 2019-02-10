@@ -1,5 +1,6 @@
 package ru.edu.ksu.mycity.presentation.detail.route.view
 
+import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -10,6 +11,7 @@ import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailRouteScreenBinding
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
+import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindRoutesList
 import ru.edu.ksu.mycity.presentation.detail.route.contracts.DetailRouteVmContract
 import ru.edu.ksu.mycity.presentation.detail.route.interactor.DetailRouteScreenInteractor
 import ru.edu.ksu.mycity.presentation.detail.route.presenter.DetailRouteScreenPresenter
@@ -41,7 +43,7 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         routeInfo = intent.extras.getParcelable(ROUTE)
-        initPlaceId = intent.extras.getInt(PLACE_ID, routeInfo.places.first())
+        initPlaceId = intent.extras.getInt(PLACE_ID, routeInfo.places.firstOrNull() ?: 0)
 
         super.onCreate(savedInstanceState)
 
@@ -80,5 +82,13 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
             routeInfo.places
         )
 
-    override fun createSubscribers() { }
+    override fun createSubscribers() {
+        viewModel.placeRoutes.observe(this, Observer { routesList ->
+            routesList?.let {
+                binding.detailRouteScreenRoutesList.bindRoutesList(routesList) {routeInfo ->
+                    presenter.onShowRouteClick(routeInfo)
+                }
+            }
+        })
+    }
 }

@@ -37,6 +37,8 @@ interface DetailRouteVmContract {
 
         fun onShowDescriptionClick()
 
+        fun onShowRouteClick(routeInfo: RouteInfo)
+
         fun nextPlaceHandler()
 
         fun prevPlaceHandler()

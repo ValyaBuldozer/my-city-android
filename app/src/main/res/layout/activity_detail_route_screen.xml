@@ -42,6 +42,7 @@
                     android:visibility="@{viewModel.state == State.DATA ? View.VISIBLE : View.INVISIBLE}"
             >
 
+                <!--HEADER-->
                 <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_info_header_height"
@@ -98,6 +99,7 @@
 
                 </android.support.constraint.ConstraintLayout>
 
+                <!--CONTROL BUTTONS-->
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_info_category_height"
@@ -159,10 +161,12 @@
                         android:text="@{viewModel.placeDescription}"
                 />
 
-                <android.support.constraint.ConstraintLayout
+                <!--ROUTES TITLE-->
+                <LinearLayout
                         android:background="@drawable/detail_category_shape"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_info_category_height"
+                        android:gravity="center"
                         android:layout_marginRight="@dimen/detail_info_side_margin"
                         android:layout_marginLeft="@dimen/detail_info_side_margin"
                         android:layout_marginTop="@dimen/detail_info_item_spacing"
@@ -181,13 +185,14 @@
                             android:textColor="@color/detail_info_category_text_color"
                     />
 
-                </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
 
+                <!--ROUTES-->
                 <LinearLayout
+                        android:id="@+id/detail_route_screen_routes_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        routes_list="@{viewModel.placeRoutes}"
                 />
 
 
