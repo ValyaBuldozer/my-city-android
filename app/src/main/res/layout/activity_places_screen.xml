@@ -7,7 +7,7 @@
 
         <import type="android.view.View"/>
 
-        <import type="ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract.ViewModel.State"/>
+        <import type="ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State"/>
 
         <variable
                 name="viewModel"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/default_activity_background"
-            tools:context=".presentation.places.view.PlacesScreenActivity">
+            tools:context=".presentation.placeInfos.view.PlacesScreenActivity">
 
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/places_screen_rv"

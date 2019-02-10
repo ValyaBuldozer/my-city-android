@@ -1,13 +1,13 @@
 package ru.edu.ksu.mycity.presentation.routes.presenter
 
 import android.util.Log
-import ru.edu.ksu.mycity.entity.presentation.Route
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BasePresenter
 import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesInteractorContract
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesRouterContract
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract
-import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract.ViewModel.State
+import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
 class RoutesScreenPresenter(
     val interactor: RoutesInteractorContract.Interactor,
@@ -32,7 +32,7 @@ class RoutesScreenPresenter(
         super.detachView()
     }
 
-    override fun obtainedRoutes(data: List<Route>, error: Throwable?) {
+    override fun obtainedRoutes(data: List<RouteInfo>, error: Throwable?) {
         if (error == null) {
             vm.state.value = State.DATA
             vm.routes.value = data
@@ -44,8 +44,8 @@ class RoutesScreenPresenter(
         }
     }
 
-    override fun onRouteSelected(route: Route) {
-        router.showRouteInfo(androidComponent!!, route)
+    override fun onRouteSelected(routeInfo: RouteInfo) {
+        router.showRouteInfo(androidComponent!!, routeInfo)
     }
 
 }

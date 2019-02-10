@@ -6,4 +6,8 @@
     <string name="menu_element_routes_title">Маршруты</string>
     <string name="menu_element_places_title">Места</string>
     <string name="menu_element_museums_title">Музеи</string>
+
+    <string name="detail_info_button_title_show">Подробнее</string>
+    <string name="detail_info_button_title_hide">Скрыть</string>
+    <string name="detail_info_routes_title">Маршруты</string>
 </resources>

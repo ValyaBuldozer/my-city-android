@@ -7,7 +7,7 @@
 
         <import type="android.view.View"/>
 
-        <import type="ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract.ViewModel.State"/>
+        <import type="ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State"/>
 
         <variable
                 name="viewModel"

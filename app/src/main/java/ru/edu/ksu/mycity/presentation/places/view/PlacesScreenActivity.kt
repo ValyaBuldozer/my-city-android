@@ -5,12 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityPlacesScreenBinding
-import ru.edu.ksu.mycity.entity.presentation.Place
+import ru.edu.ksu.mycity.entity.presentation.PlaceInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
 import ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract
 import ru.edu.ksu.mycity.presentation.places.interactor.PlacesScreenInteractor
@@ -63,7 +62,7 @@ class PlacesScreenActivity : BaseActivity<PlacesVmContract.Presenter, PlacesVmCo
         })
     }
 
-    private fun onPlaceItemClick(place: Place) {
-        presenter.onPlaceSelected(place)
+    private fun onPlaceItemClick(placeInfo: PlaceInfo) {
+        presenter.onPlaceSelected(placeInfo)
     }
 }

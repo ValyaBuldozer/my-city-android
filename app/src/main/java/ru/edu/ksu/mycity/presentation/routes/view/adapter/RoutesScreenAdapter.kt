@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ItemRouteBinding
-import ru.edu.ksu.mycity.entity.presentation.Route
+import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.presentation.BaseAdapter
 
-class RoutesScreenAdapter(val clickListener: (Route) -> Unit ) : BaseAdapter<RoutesScreenAdapter.ViewHolder, Route>() {
+class RoutesScreenAdapter(val clickListener: (RouteInfo) -> Unit ) : BaseAdapter<RoutesScreenAdapter.ViewHolder, RouteInfo>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
@@ -28,7 +28,7 @@ class RoutesScreenAdapter(val clickListener: (Route) -> Unit ) : BaseAdapter<Rou
 
     class ViewHolder(val bindView: ItemRouteBinding) : RecyclerView.ViewHolder(bindView.root) {
 
-        fun bind(viewModel: Route) {
+        fun bind(viewModel: RouteInfo) {
             with(bindView) {
                 this.viewModel = viewModel
                 executePendingBindings()

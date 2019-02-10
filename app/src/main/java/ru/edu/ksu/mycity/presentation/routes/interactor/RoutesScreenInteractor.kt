@@ -8,7 +8,7 @@ import ru.edu.ksu.mycity.helpers.arch.base.BaseInteractor
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesInteractorContract
 import okhttp3.Callback
 import okhttp3.Response
-import ru.edu.ksu.mycity.entity.gson.RouteGsonModel
+import ru.edu.ksu.mycity.entity.gson.RouteInfoGsonModel
 import java.io.IOException
 import java.lang.Exception
 
@@ -28,8 +28,8 @@ class RoutesScreenInteractor(private val networkService: NetworkService) : Route
                     try {
 
                         val json = response.body()!!.string()
-                        val type = object : TypeToken<List<RouteGsonModel>>() {}.type
-                        val routesGson = Gson().fromJson<List<RouteGsonModel>>(json, type)
+                        val type = object : TypeToken<List<RouteInfoGsonModel>>() {}.type
+                        val routesGson = Gson().fromJson<List<RouteInfoGsonModel>>(json, type)
                         val routes = routesGson.map { it.getPresentation() }
 
                         runUi { listener?.obtainedRoutes(routes, null) }

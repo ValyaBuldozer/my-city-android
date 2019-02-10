@@ -6,7 +6,7 @@ import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
 import ru.edu.ksu.mycity.domain.network.service.NetworkService
-import ru.edu.ksu.mycity.entity.gson.PlaceGsonModel
+import ru.edu.ksu.mycity.entity.gson.PlaceInfoGsonModel
 import ru.edu.ksu.mycity.helpers.arch.base.BaseInteractor
 import ru.edu.ksu.mycity.presentation.places.constracts.PlacesInteractorContract
 import java.io.IOException
@@ -28,8 +28,8 @@ class PlacesScreenInteractor(
                 try {
 
                     val jsonString = response.body()!!.string()
-                    val type = object : TypeToken<List<PlaceGsonModel>>() {}.type
-                    val placesJson = Gson().fromJson<List<PlaceGsonModel>>(jsonString, type)
+                    val type = object : TypeToken<List<PlaceInfoGsonModel>>() {}.type
+                    val placesJson = Gson().fromJson<List<PlaceInfoGsonModel>>(jsonString, type)
                     val places = placesJson.map { it.getPresentation() }
 
                     runUi { listener?.obtainedPlaces(places, null) }

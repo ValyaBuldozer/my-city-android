@@ -29,6 +29,10 @@
         </activity>
         <activity android:name=".presentation.places.view.PlacesScreenActivity">
         </activity>
+        <activity android:name=".presentation.detail.place.view.DetailPlaceScreenActivity">
+        </activity>
+        <activity android:name=".presentation.detail.route.view.DetailRouteScreenActivity">
+        </activity>
     </application>
 
 </manifest>
