@@ -10,6 +10,7 @@ import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailPlaceScreenBinding
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
+import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindQuizAnswers
 import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindRoutesList
 import ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContract
 import ru.edu.ksu.mycity.presentation.detail.place.interactor.DetailPlaceScreenInteractor
@@ -56,6 +57,14 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
             routeList?.let {
                 binding.detailPlaceScreenRoutes.bindRoutesList(routeList) { routeInfo ->
                     presenter.onRouteClick(routeInfo)
+                }
+            }
+        })
+
+        viewModel.placeQuizAnswers.observe(this, Observer { answersList ->
+            answersList?.let {
+                binding.detailPlaceScreenQuizAnswers.bindQuizAnswers(answersList) { answer ->
+                    presenter.onQuizAnswerClick(answer)
                 }
             }
         })

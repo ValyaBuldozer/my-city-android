@@ -19,6 +19,8 @@
     <color name="detail_info_category_text_color">#FFFFFF</color>
     <color name="detail_info_category_background">#FF13CE66</color>
 
+    <color name="detail_place_quiz_answer">#FF2EB7FC</color>
+
     <color name="detail_route_btn_enabled">#2EB7FC</color>
     <color name="detail_route_btn_disabled">#969FAA</color>
 

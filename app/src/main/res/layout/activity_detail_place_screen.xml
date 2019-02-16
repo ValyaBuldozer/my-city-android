@@ -106,29 +106,26 @@
                         android:text="@{viewModel.placeDescription}"
                 />
 
-                <android.support.constraint.ConstraintLayout
-                        android:background="@drawable/detail_category_shape"
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_info_category_height"
                         android:layout_marginRight="@dimen/detail_info_side_margin"
                         android:layout_marginLeft="@dimen/detail_info_side_margin"
                         android:layout_marginTop="@dimen/detail_info_item_spacing"
-                        android:layout_marginBottom="@dimen/detail_info_item_spacing">
+                        android:layout_marginBottom="@dimen/detail_info_item_spacing"
+                        android:gravity="center"
+                        android:background="@drawable/detail_category_shape">
 
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
                             android:text="@string/detail_info_routes_title"
                             android:textSize="@dimen/detail_info_category_title_size"
                             android:textStyle="bold"
                             android:textColor="@color/detail_info_category_text_color"
                     />
 
-                </android.support.constraint.ConstraintLayout>
+                </LinearLayout>
 
                 <LinearLayout
                         android:id="@+id/detail_place_screen_routes"
@@ -137,6 +134,45 @@
                         android:orientation="vertical"
                 />
 
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/detail_info_category_height"
+                        android:layout_marginRight="@dimen/detail_info_side_margin"
+                        android:layout_marginLeft="@dimen/detail_info_side_margin"
+                        android:layout_marginTop="@dimen/detail_info_item_spacing"
+                        android:layout_marginBottom="@dimen/detail_info_item_spacing"
+                        android:gravity="center"
+                        android:background="@drawable/detail_category_shape">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/detail_info_quiz_title"
+                            android:textSize="@dimen/detail_info_category_title_size"
+                            android:textStyle="bold"
+                            android:textColor="@color/detail_info_category_text_color"
+                    />
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/detail_place_screen_quiz_question"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingRight="30dp"
+                        android:paddingLeft="30dp"
+                        android:textSize="@dimen/default_text_size"
+                        android:text="@{viewModel.placeQuizTitle}"
+                        tools:text="Some question ????"
+                />
+
+                <LinearLayout
+                        android:id="@+id/detail_place_screen_quiz_answers"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"/>
 
             </LinearLayout>
 

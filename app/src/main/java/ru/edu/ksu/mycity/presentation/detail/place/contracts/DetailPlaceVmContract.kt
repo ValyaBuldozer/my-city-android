@@ -1,6 +1,7 @@
 package ru.edu.ksu.mycity.presentation.detail.place.contracts
 
 import android.arch.lifecycle.MutableLiveData
+import ru.edu.ksu.mycity.entity.presentation.Answer
 import ru.edu.ksu.mycity.entity.presentation.Place
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperPresenter
@@ -24,7 +25,11 @@ interface DetailPlaceVmContract {
         var placeDescription: MutableLiveData<String?>
 
         var placeRoutes: MutableLiveData<List<RouteInfo>?>
-        
+
+        var placeQuizTitle: MutableLiveData<String?>
+
+        var placeQuizAnswers: MutableLiveData<List<Answer>?>
+
     }
 
     interface Presenter : ViperPresenter<ViewModel> {
@@ -32,6 +37,8 @@ interface DetailPlaceVmContract {
         fun onShowDescriptionClick()
 
         fun onRouteClick(routeInfo: RouteInfo)
+
+        fun onQuizAnswerClick(answer: Answer)
 
     }
 }

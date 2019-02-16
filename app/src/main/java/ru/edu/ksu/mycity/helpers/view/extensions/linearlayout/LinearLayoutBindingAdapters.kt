@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ItemDefaultBinding
+import ru.edu.ksu.mycity.databinding.ItemQuizAnswerBinding
+import ru.edu.ksu.mycity.entity.presentation.Answer
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 
 @BindingAdapter(value = ["routes_list", "route_click_handler"], requireAll = true)
@@ -28,6 +30,28 @@ fun LinearLayout.bindRoutesList(routes: List<RouteInfo>, clickHandler: (routeInf
             title = routeInfo.name
             setOnClickListener {
                 clickHandler(routeInfo)
+            }
+        }
+    }
+}
+
+@BindingAdapter(value = ["quiz_answers", "quiz_answer_handler"], requireAll = true)
+fun LinearLayout.bindQuizAnswers(answers: List<Answer>, clickHandler: (answer: Answer) -> Unit) {
+    this.removeAllViews()
+
+    val layoutInflater = (this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)) as LayoutInflater
+
+    answers.forEach { answer ->
+
+        DataBindingUtil.inflate<ItemQuizAnswerBinding>(
+            layoutInflater,
+            R.layout.item_quiz_answer,
+            this,
+            true
+        ).apply {
+            title = answer.title
+            setOnClickListener {
+                clickHandler(answer)
             }
         }
     }
