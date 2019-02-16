@@ -1,11 +1,11 @@
 package ru.edu.ksu.mycity.presentation.detail.route.view
 
-import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailRouteScreenBinding

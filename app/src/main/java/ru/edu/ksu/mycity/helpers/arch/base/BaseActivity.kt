@@ -2,8 +2,8 @@ package ru.edu.ksu.mycity.helpers.arch.base
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperPresenter
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel

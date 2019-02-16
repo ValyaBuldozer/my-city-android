@@ -1,11 +1,11 @@
 package ru.edu.ksu.mycity.presentation.places.view
 
-import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityPlacesScreenBinding

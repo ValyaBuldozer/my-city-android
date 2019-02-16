@@ -16,7 +16,7 @@
                 type="ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContract.ViewModel"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/default_activity_background"
@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:orientation="vertical">
 
-                <android.support.constraint.ConstraintLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/detail_info_header_height"
                 >
@@ -54,7 +54,7 @@
                             tools:src="@drawable/places_menu_background"
                     />
 
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="@dimen/detail_info_header_control_width"
                             android:layout_height="match_parent"
                             android:background="@color/place_detail_title_background"
@@ -90,9 +90,9 @@
                                 tools:text="@string/detail_info_button_title_show"
                         />
 
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </android.support.constraint.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                         android:id="@+id/detail_place_screen_description"
@@ -178,6 +178,6 @@
 
         </ScrollView>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

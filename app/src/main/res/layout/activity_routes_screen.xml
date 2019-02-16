@@ -14,13 +14,13 @@
                 type="ru.edu.ksu.mycity.presentation.routes.contracts.RoutesVmContract.ViewModel"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/routes_screen_base"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
     >
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/routes_screen_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -28,8 +28,8 @@
                 tools:listitem="@layout/item_route"
                 tools:itemCount="4">
 
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

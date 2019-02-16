@@ -1,10 +1,10 @@
 package ru.edu.ksu.mycity.helpers.view.extensions.linearlayout
 
 import android.content.Context
-import android.databinding.BindingAdapter
-import android.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import androidx.databinding.BindingAdapter
+import androidx.databinding.DataBindingUtil
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ItemDefaultBinding
 import ru.edu.ksu.mycity.databinding.ItemQuizAnswerBinding

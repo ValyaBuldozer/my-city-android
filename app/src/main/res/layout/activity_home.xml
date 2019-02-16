@@ -9,7 +9,7 @@
 
 
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".presentation.home.view.HomeActivity">
@@ -24,14 +24,14 @@
                           android:layout_height="match_parent"
                           android:orientation="vertical">
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                         android:id="@+id/home_menu_element_nearby"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/menu_element_height"
                         android:layout_margin="@dimen/menu_element_margin"
                         android:elevation="@dimen/menu_element_elevation">
 
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
@@ -61,18 +61,18 @@
                                 app:layout_constraintTop_toTopOf="@id/near_menu_element_title_background"
                         />
 
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                         android:id="@+id/home_menu_element_routes"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/menu_element_height"
                         android:layout_margin="@dimen/menu_element_margin"
                         android:elevation="@dimen/menu_element_elevation">
 
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
@@ -102,18 +102,18 @@
                                 app:layout_constraintTop_toTopOf="@id/routes_menu_element_title_background"
                         />
 
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                         android:id="@+id/home_menu_element_places"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/menu_element_height"
                         android:layout_margin="@dimen/menu_element_margin"
                         android:elevation="@dimen/menu_element_elevation">
 
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
@@ -143,18 +143,18 @@
                                 app:layout_constraintTop_toTopOf="@id/places_menu_element_title_background"
                         />
 
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                         android:id="@+id/home_menu_element_museums"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/menu_element_height"
                         android:layout_margin="@dimen/menu_element_margin"
                         android:elevation="@dimen/menu_element_elevation">
 
-                    <android.support.constraint.ConstraintLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
@@ -184,14 +184,14 @@
                                 app:layout_constraintTop_toTopOf="@id/museums_menu_element_title_background"
                         />
 
-                    </android.support.constraint.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
         </ScrollView>
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

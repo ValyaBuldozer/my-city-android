@@ -1,7 +1,7 @@
 package ru.edu.ksu.mycity.helpers.view.extensions.imageview
 
-import android.databinding.BindingAdapter
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import com.squareup.picasso.Picasso
 import okhttp3.HttpUrl
 import ru.edu.ksu.mycity.R

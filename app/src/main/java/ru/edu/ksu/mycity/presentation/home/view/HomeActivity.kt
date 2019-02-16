@@ -2,9 +2,9 @@ package ru.edu.ksu.mycity.presentation.home.view
 
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityHomeBinding
 import ru.edu.ksu.mycity.presentation.places.view.PlacesScreenActivity

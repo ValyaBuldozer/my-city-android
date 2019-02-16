@@ -1,6 +1,6 @@
 package ru.edu.ksu.mycity.presentation.detail.place.contracts
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import ru.edu.ksu.mycity.entity.presentation.Answer
 import ru.edu.ksu.mycity.entity.presentation.Place
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo

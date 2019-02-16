@@ -15,19 +15,19 @@
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/default_activity_background"
             tools:context=".presentation.placeInfos.view.PlacesScreenActivity">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/places_screen_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="@{viewModel.state == State.DATA ? View.VISIBLE : View.INVISIBLE}"
                 tools:listitem="@layout/item_default"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

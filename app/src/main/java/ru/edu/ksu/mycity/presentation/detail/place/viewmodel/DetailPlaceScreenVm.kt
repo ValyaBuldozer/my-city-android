@@ -1,6 +1,6 @@
 package ru.edu.ksu.mycity.presentation.detail.place.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import ru.edu.ksu.mycity.entity.presentation.Answer
 import ru.edu.ksu.mycity.entity.presentation.Place
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
@@ -11,7 +11,7 @@ import ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContra
 
 class DetailPlaceScreenVm : BaseViewModel(), DetailPlaceVmContract.ViewModel {
 
-    override var state: MutableLiveData<ViperViewModel.State> =
+    override var state: MutableLiveData<State> =
         MutableLiveData<State>().apply { value = State.INITIAL }
 
     override var errorMessage: MutableLiveData<String?> =
