@@ -28,7 +28,7 @@ fun LinearLayout.bindRoutesList(routes: List<RouteInfo>, clickHandler: (routeInf
         ).apply {
             imagePath = routeInfo.imagePath
             title = routeInfo.name
-            setOnClickListener {
+            root.setOnClickListener {
                 clickHandler(routeInfo)
             }
         }
@@ -43,6 +43,9 @@ fun LinearLayout.bindQuizAnswers(answers: List<Answer>, clickHandler: (answer: A
 
     answers.forEach { answer ->
 
+        // to make clicklistenter closure works fine
+        //val currentAnswer = answer.copy()
+
         DataBindingUtil.inflate<ItemQuizAnswerBinding>(
             layoutInflater,
             R.layout.item_quiz_answer,
@@ -50,7 +53,7 @@ fun LinearLayout.bindQuizAnswers(answers: List<Answer>, clickHandler: (answer: A
             true
         ).apply {
             title = answer.title
-            setOnClickListener {
+            root.setOnClickListener {
                 clickHandler(answer)
             }
         }

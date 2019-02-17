@@ -12,6 +12,7 @@ import ru.edu.ksu.mycity.databinding.ActivityDetailPlaceScreenBinding
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
 import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindQuizAnswers
 import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindRoutesList
+import ru.edu.ksu.mycity.presentation.common.quiz.answer.dialog.fragment.QuizAnswerDialogFragment
 import ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContract
 import ru.edu.ksu.mycity.presentation.detail.place.interactor.DetailPlaceScreenInteractor
 import ru.edu.ksu.mycity.presentation.detail.place.presenter.DetailPlaceScreenPresenter
@@ -40,7 +41,6 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
         binding.viewModel = viewModel
 
         binding.detailPlaceScreenShowButton.setOnClickListener(this::showDescriptionClickHandler)
-
     }
 
     override fun createPresenter(): DetailPlaceVmContract.Presenter =
@@ -66,6 +66,13 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
                 binding.detailPlaceScreenQuizAnswers.bindQuizAnswers(answersList) { answer ->
                     presenter.onQuizAnswerClick(answer)
                 }
+            }
+        })
+
+        viewModel.currentAnswer.observe(this, Observer { answer ->
+            answer?.let {
+                QuizAnswerDialogFragment.create(answer.isRight, answer.description)
+                    .show(this@DetailPlaceScreenActivity.fragmentManager, "answer_dialog")
             }
         })
     }

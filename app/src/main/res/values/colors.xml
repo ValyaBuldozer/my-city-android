@@ -24,4 +24,7 @@
     <color name="detail_route_btn_enabled">#2EB7FC</color>
     <color name="detail_route_btn_disabled">#969FAA</color>
 
+    <color name="quiz_answer_color_right">#77D353</color>
+    <color name="quiz_answer_color_wrong">#F95F62</color>
+
 </resources>

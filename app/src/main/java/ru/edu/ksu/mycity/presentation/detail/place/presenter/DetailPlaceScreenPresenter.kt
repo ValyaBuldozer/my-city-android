@@ -67,6 +67,6 @@ class DetailPlaceScreenPresenter(
     }
 
     override fun onQuizAnswerClick(answer: Answer) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        vm.currentAnswer.value = answer
     }
 }

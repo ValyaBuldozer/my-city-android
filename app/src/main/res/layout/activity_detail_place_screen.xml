@@ -104,6 +104,8 @@
                         android:textSize="@dimen/default_text_size"
                         android:visibility="@{viewModel.showDescription ? View.VISIBLE : View.GONE}"
                         android:text="@{viewModel.placeDescription}"
+                        tools:visibility="visible"
+                        tools:text="@string/tools_long_text"
                 />
 
                 <LinearLayout

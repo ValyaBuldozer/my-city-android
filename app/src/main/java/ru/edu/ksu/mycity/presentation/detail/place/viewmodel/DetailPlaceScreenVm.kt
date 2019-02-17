@@ -37,4 +37,7 @@ class DetailPlaceScreenVm : BaseViewModel(), DetailPlaceVmContract.ViewModel {
 
     override var placeQuizAnswers: MutableLiveData<List<Answer>?> =
         MutableLiveData<List<Answer>?>().apply { value = emptyList() }
+
+    override var currentAnswer: MutableLiveData<Answer?> =
+        MutableLiveData<Answer?>().apply { value = null }
 }

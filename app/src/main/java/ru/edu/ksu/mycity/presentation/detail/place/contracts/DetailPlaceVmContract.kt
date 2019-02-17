@@ -30,6 +30,8 @@ interface DetailPlaceVmContract {
 
         var placeQuizAnswers: MutableLiveData<List<Answer>?>
 
+        var currentAnswer: MutableLiveData<Answer?>
+
     }
 
     interface Presenter : ViperPresenter<ViewModel> {

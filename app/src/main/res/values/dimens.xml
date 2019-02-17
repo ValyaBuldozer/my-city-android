@@ -28,5 +28,10 @@
     <dimen name="detail_info_category_height">40dp</dimen>
     <dimen name="detail_info_category_title_size">20sp</dimen>
     <dimen name="detail_info_category_corner_radius">10dp</dimen>
-
+    
+    <dimen name="quiz_answer_dialog_height">360dp</dimen>
+    <dimen name="quiz_answer_dialog_border_width">9dp</dimen>
+    <dimen name="quiz_answer_dialog_border_radius">10dp</dimen>
+    <dimen name="quiz_answer_text_size">8pt</dimen>
+    <dimen name="quiz_answer_title_size">14pt</dimen>
 </resources>
