@@ -25,12 +25,12 @@ class HomeActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         binding.apply {
-            homeMenuElementRoutes.setOnClickListener {
+            homeMenuElementRoutes.root.setOnClickListener {
                 val intent = RoutesScreenActivity.createIntent(this@HomeActivity)
                 this@HomeActivity.startActivity(intent)
             }
 
-            homeMenuElementPlaces.setOnClickListener {
+            homeMenuElementPlaces.root.setOnClickListener {
                 val intent = PlacesScreenActivity.createIntent(this@HomeActivity)
                 this@HomeActivity.startActivity(intent)
             }
