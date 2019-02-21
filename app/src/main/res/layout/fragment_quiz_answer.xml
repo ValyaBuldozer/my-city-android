@@ -14,7 +14,7 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/app_bar_height"
             android:orientation="vertical"
             android:gravity="center"
             android:background="@{isRight ? @drawable/quiz_right_answer_shape : @drawable/quiz_wrong_answer_shape}"

@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/default_activity_background</item>
         <item name="android:textViewStyle">@style/RobotoSlabViewStyle</item>
         <item name="android:fontFamily">@font/roboto_slab_font</item>
     </style>

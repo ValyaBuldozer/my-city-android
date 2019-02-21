@@ -28,6 +28,8 @@ class DetailRouteScreenPresenter(
             vm.state.value = State.LOADING
             interactor.obtainRoutePlace(placeId)
         }
+
+        vm.routeTitle.value = routeInfo.name
     }
 
     override fun detachView() {

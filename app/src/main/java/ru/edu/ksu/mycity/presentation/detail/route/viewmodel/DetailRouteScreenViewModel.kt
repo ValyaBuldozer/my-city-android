@@ -23,6 +23,9 @@ class DetailRouteScreenViewModel(
     override var showDescription: MutableLiveData<Boolean> =
         MutableLiveData<Boolean>().apply { value = false }
 
+    override var routeTitle: MutableLiveData<String> =
+        MutableLiveData<String>().apply { value = "" }
+
     override var placeTitle: MutableLiveData<String?> =
         MutableLiveData<String?>().apply { value = "" }
 

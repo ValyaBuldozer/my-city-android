@@ -18,6 +18,8 @@ interface DetailRouteVmContract {
 
         var showDescription : MutableLiveData<Boolean>
 
+        var routeTitle : MutableLiveData<String>
+
         var placeId : MutableLiveData<Int>
 
         var placeTitle : MutableLiveData<String?>

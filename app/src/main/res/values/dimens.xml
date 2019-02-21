@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="app_bar_height">154dp</dimen>
+    <dimen name="app_bar_height">100dp</dimen>
     <dimen name="app_bar_radius">10dp</dimen>
-    <dimen name="app_bar_margin">10dp</dimen>
+    <dimen name="app_bar_margin">5dp</dimen>
     <dimen name="app_bar_text_size">15pt</dimen>
+    <dimen name="app_bar_menu_icon_size">40dp</dimen>
 
     <dimen name="menu_element_height">200dp</dimen>
     <dimen name="menu_element_margin">5dp</dimen>
