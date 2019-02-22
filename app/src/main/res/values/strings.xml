@@ -8,6 +8,8 @@
         Some text some text some text
     </string>
 
+    <string name="splash_screen_title">МОЯ КОСТРОМА</string>
+
     <string name="app_bar_title_home">МОЯ \nКОСТРОМА</string>
     <string name="app_bar_title_places">МЕСТА</string>
     <string name="app_bar_title_routes">МАРШРУТЫ</string>
