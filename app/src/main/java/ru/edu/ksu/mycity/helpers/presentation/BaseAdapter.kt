@@ -1,6 +1,7 @@
 package ru.edu.ksu.mycity.helpers.presentation
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
+
 
 abstract class BaseAdapter<VH : RecyclerView.ViewHolder, MODEL_TYPE> : RecyclerView.Adapter<VH>() {
 

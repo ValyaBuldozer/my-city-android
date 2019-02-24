@@ -14,9 +14,9 @@ class App : Application() {
 
     companion object {
 
-        private val CONNECTION_TIMEOUT = 300L
+        private const val CONNECTION_TIMEOUT = 300L
 
-        private val SOCKET_TIMEOUT = 300L
+        private const val SOCKET_TIMEOUT = 300L
 
         lateinit var instance: App
 

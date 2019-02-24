@@ -9,7 +9,7 @@
         <variable name="imagePath" type="String"/>
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_item_height"
             android:layout_margin="@dimen/default_item_margin"
@@ -35,6 +35,6 @@
                 android:paddingLeft="@dimen/menu_element_title_left_margin"
                 tools:text="Text here"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

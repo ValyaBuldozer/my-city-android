@@ -1,8 +1,8 @@
 package ru.edu.ksu.mycity.presentation.detail.route.viewmodel
 
-import android.arch.lifecycle.MediatorLiveData
-import android.arch.lifecycle.MutableLiveData
 import android.widget.Button
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BaseViewModel
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel
@@ -14,7 +14,7 @@ class DetailRouteScreenViewModel(
     private val placesList : List<Int>
 ) : BaseViewModel(), DetailRouteVmContract.ViewModel {
 
-    override var state: MutableLiveData<ViperViewModel.State> =
+    override var state: MutableLiveData<State> =
         MutableLiveData<ViperViewModel.State>().apply { value = State.INITIAL }
 
     override var errorMessage: MutableLiveData<String?> =
@@ -22,6 +22,9 @@ class DetailRouteScreenViewModel(
 
     override var showDescription: MutableLiveData<Boolean> =
         MutableLiveData<Boolean>().apply { value = false }
+
+    override var routeTitle: MutableLiveData<String> =
+        MutableLiveData<String>().apply { value = "" }
 
     override var placeTitle: MutableLiveData<String?> =
         MutableLiveData<String?>().apply { value = "" }

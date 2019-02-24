@@ -1,11 +1,11 @@
 package ru.edu.ksu.mycity.presentation.detail.route.view
 
-import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailRouteScreenBinding
@@ -54,6 +54,7 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
         binding.detailRouteScreenShowButton.setOnClickListener(this::showDescriptionHandler)
         binding.detailRouteNextBtn.setOnClickListener(this::nextPlaceHandler)
         binding.detailRoutePrevBtn.setOnClickListener(this::prevPlaceHandler)
+        binding.detailRouteAppBar.appbarGoBackBtn.setOnClickListener(this::goBackHandler)
     }
 
     private fun showDescriptionHandler(view: View) {
@@ -66,6 +67,10 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
 
     private fun prevPlaceHandler(view: View) {
         presenter.prevPlaceHandler()
+    }
+
+    private fun goBackHandler(view: View) {
+        presenter.onGoBackClick()
     }
 
     override fun createPresenter(): DetailRouteVmContract.Presenter =

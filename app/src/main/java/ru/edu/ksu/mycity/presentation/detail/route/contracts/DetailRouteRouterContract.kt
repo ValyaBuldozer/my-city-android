@@ -9,6 +9,10 @@ interface DetailRouteRouterContract {
     interface Presenter : ViperRouter.Listener {}
 
     interface Router : ViperRouter<Presenter> {
+
         fun showRouteDetail(androidComponent: AndroidComponent, routeInfo: RouteInfo)
+
+        fun backToRoutesList(androidComponent: AndroidComponent)
+
     }
 }

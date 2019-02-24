@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#FFF7E2</color>
+    <color name="colorPrimaryDark">#FF2EB7FC</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="app_bar_background">#FF2EB7FC</color>
+    <color name="app_bar_text_color">#FFF</color>
+
+    <color name="splash_screen_background">#FF2EB7FC</color>
 
     <color name="menu_element_title_background">#60000000</color>
     <color name="menu_element_title_color">#ffffff</color>
@@ -16,7 +21,12 @@
     <color name="detail_info_category_text_color">#FFFFFF</color>
     <color name="detail_info_category_background">#FF13CE66</color>
 
+    <color name="detail_place_quiz_answer">#FF2EB7FC</color>
+
     <color name="detail_route_btn_enabled">#2EB7FC</color>
     <color name="detail_route_btn_disabled">#969FAA</color>
+
+    <color name="quiz_answer_color_right">#77D353</color>
+    <color name="quiz_answer_color_wrong">#F95F62</color>
 
 </resources>

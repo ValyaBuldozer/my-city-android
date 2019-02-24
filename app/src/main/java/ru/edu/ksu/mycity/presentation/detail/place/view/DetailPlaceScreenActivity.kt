@@ -1,16 +1,18 @@
 package ru.edu.ksu.mycity.presentation.detail.place.view
 
-import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import ru.edu.ksu.mycity.App
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityDetailPlaceScreenBinding
 import ru.edu.ksu.mycity.helpers.arch.base.BaseActivity
+import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindQuizAnswers
 import ru.edu.ksu.mycity.helpers.view.extensions.linearlayout.bindRoutesList
+import ru.edu.ksu.mycity.presentation.common.quiz.answer.dialog.fragment.QuizAnswerDialogFragment
 import ru.edu.ksu.mycity.presentation.detail.place.contracts.DetailPlaceVmContract
 import ru.edu.ksu.mycity.presentation.detail.place.interactor.DetailPlaceScreenInteractor
 import ru.edu.ksu.mycity.presentation.detail.place.presenter.DetailPlaceScreenPresenter
@@ -39,7 +41,7 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
         binding.viewModel = viewModel
 
         binding.detailPlaceScreenShowButton.setOnClickListener(this::showDescriptionClickHandler)
-
+        binding.detailPlaceAppBar.appbarGoBackBtn.setOnClickListener(this::goBackClickHandler)
     }
 
     override fun createPresenter(): DetailPlaceVmContract.Presenter =
@@ -59,9 +61,28 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
                 }
             }
         })
+
+        viewModel.placeQuizAnswers.observe(this, Observer { answersList ->
+            answersList?.let {
+                binding.detailPlaceScreenQuizAnswers.bindQuizAnswers(answersList) { answer ->
+                    presenter.onQuizAnswerClick(answer)
+                }
+            }
+        })
+
+        viewModel.currentAnswer.observe(this, Observer { answer ->
+            answer?.let {
+                QuizAnswerDialogFragment.create(answer.isRight, answer.description)
+                    .show(this@DetailPlaceScreenActivity.fragmentManager, "answer_dialog")
+            }
+        })
     }
 
     private fun showDescriptionClickHandler(view: View) {
         presenter.onShowDescriptionClick()
+    }
+
+    private fun goBackClickHandler(view: View) {
+        presenter.onGoBackClick()
     }
 }

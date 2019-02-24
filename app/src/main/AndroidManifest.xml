@@ -15,15 +15,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".presentation.home.view.HomeActivity">
+        </activity>
+        <activity
+                android:name=".presentation.splashscreen.SplashScreenActivity"
+                android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity
-                android:name=".presentation.splashscreen.SplashScreen"
-                android:theme="@style/NoToolbar">
         </activity>
         <activity android:name=".presentation.routes.view.RoutesScreenActivity">
         </activity>

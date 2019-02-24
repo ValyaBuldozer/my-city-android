@@ -2,9 +2,9 @@ package ru.edu.ksu.mycity.presentation.home.view
 
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import ru.edu.ksu.mycity.R
 import ru.edu.ksu.mycity.databinding.ActivityHomeBinding
 import ru.edu.ksu.mycity.presentation.places.view.PlacesScreenActivity
@@ -25,12 +25,12 @@ class HomeActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         binding.apply {
-            homeMenuElementRoutes.setOnClickListener {
+            homeMenuElementRoutes.root.setOnClickListener {
                 val intent = RoutesScreenActivity.createIntent(this@HomeActivity)
                 this@HomeActivity.startActivity(intent)
             }
 
-            homeMenuElementPlaces.setOnClickListener {
+            homeMenuElementPlaces.root.setOnClickListener {
                 val intent = PlacesScreenActivity.createIntent(this@HomeActivity)
                 this@HomeActivity.startActivity(intent)
             }

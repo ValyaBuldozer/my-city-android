@@ -10,7 +10,8 @@ data class Place(
     val backgroundImagePath : String,
     val description : String,
     val questionTitle : String,
-    val routes: List<RouteInfo>) : ParcelableModel {
+    val routes: List<RouteInfo>,
+    val answers: List<Answer>) : ParcelableModel {
 
     companion object {
         @JvmField
@@ -24,7 +25,8 @@ data class Place(
         backgroundImagePath = parcel.readString(),
         description = parcel.readString(),
         questionTitle = parcel.readString(),
-        routes = ArrayList<RouteInfo>().apply { parcel.readList(this, RouteInfo::class.java.classLoader) }
+        routes = ArrayList<RouteInfo>().apply { parcel.readList(this, RouteInfo::class.java.classLoader) },
+        answers = ArrayList<Answer>().apply { parcel.readList(this, Answer::class.java.classLoader) }
     )
 
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
@@ -35,5 +37,6 @@ data class Place(
         writeString(description)
         writeString(questionTitle)
         writeList(routes)
+        writeList(answers)
     }
 }

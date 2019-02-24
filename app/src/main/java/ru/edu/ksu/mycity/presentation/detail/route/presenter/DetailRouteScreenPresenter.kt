@@ -28,6 +28,8 @@ class DetailRouteScreenPresenter(
             vm.state.value = State.LOADING
             interactor.obtainRoutePlace(placeId)
         }
+
+        vm.routeTitle.value = routeInfo.name
     }
 
     override fun detachView() {
@@ -78,5 +80,9 @@ class DetailRouteScreenPresenter(
 
     override fun onShowRouteClick(routeInfo: RouteInfo) {
         router.showRouteDetail(androidComponent!!, routeInfo)
+    }
+
+    override fun onGoBackClick() {
+        router.backToRoutesList(androidComponent!!)
     }
 }

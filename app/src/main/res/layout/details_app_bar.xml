@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="title" type="java.lang.String"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/app_bar_shape"
+            android:layout_margin="@dimen/app_bar_margin"
+            tools:layout_height="@dimen/app_bar_height">
+
+        <ImageView
+                android:id="@+id/appbar_go_back_btn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/app_bar_menu_icon_size"
+                android:src="@drawable/ic_go_back"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/app_bar_text_size"
+                android:textColor="@color/app_bar_text_color"
+                android:textStyle="bold"
+                android:text="@{title}"
+                app:layout_constraintLeft_toRightOf="@+id/appbar_go_back_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingLeft="15dp"
+                tools:text="MY KOSTROMA"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

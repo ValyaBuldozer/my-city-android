@@ -1,5 +1,6 @@
 package ru.edu.ksu.mycity.presentation.detail.place.presenter
 
+import ru.edu.ksu.mycity.entity.presentation.Answer
 import ru.edu.ksu.mycity.entity.presentation.Place
 import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BasePresenter
@@ -41,6 +42,8 @@ class DetailPlaceScreenPresenter(
                 placeDescription.value = place.description
                 placeImagePath.value = place.backgroundImagePath
                 placeRoutes.value = place.routes
+                placeQuizTitle.value = place.questionTitle
+                placeQuizAnswers.value = place.answers
             }
         } else {
             with (vm) {
@@ -49,6 +52,8 @@ class DetailPlaceScreenPresenter(
                 placeDescription.value = null
                 placeImagePath.value = null
                 placeRoutes.value = emptyList()
+                placeQuizTitle.value = null
+                placeQuizAnswers.value = emptyList()
             }
         }
     }
@@ -59,5 +64,13 @@ class DetailPlaceScreenPresenter(
 
     override fun onRouteClick(routeInfo: RouteInfo) {
         router.showRoutePlace(androidComponent!!, routeInfo, placeId)
+    }
+
+    override fun onQuizAnswerClick(answer: Answer) {
+        vm.currentAnswer.value = answer
+    }
+
+    override fun onGoBackClick() {
+        router.backToPlacesList(androidComponent!!)
     }
 }

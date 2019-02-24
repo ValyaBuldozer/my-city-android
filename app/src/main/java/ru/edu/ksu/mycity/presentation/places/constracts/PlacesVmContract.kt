@@ -1,6 +1,6 @@
 package ru.edu.ksu.mycity.presentation.places.constracts
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import ru.edu.ksu.mycity.entity.presentation.PlaceInfo
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperPresenter
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel
