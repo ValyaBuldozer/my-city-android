@@ -54,6 +54,7 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
         binding.detailRouteScreenShowButton.setOnClickListener(this::showDescriptionHandler)
         binding.detailRouteNextBtn.setOnClickListener(this::nextPlaceHandler)
         binding.detailRoutePrevBtn.setOnClickListener(this::prevPlaceHandler)
+        binding.detailRouteAppBar.appbarGoBackBtn.setOnClickListener(this::goBackHandler)
     }
 
     private fun showDescriptionHandler(view: View) {
@@ -66,6 +67,10 @@ class DetailRouteScreenActivity : BaseActivity<DetailRouteVmContract.Presenter, 
 
     private fun prevPlaceHandler(view: View) {
         presenter.prevPlaceHandler()
+    }
+
+    private fun goBackHandler(view: View) {
+        presenter.onGoBackClick()
     }
 
     override fun createPresenter(): DetailRouteVmContract.Presenter =

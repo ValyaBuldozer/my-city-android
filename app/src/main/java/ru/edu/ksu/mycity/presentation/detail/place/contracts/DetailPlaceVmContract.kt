@@ -42,5 +42,7 @@ interface DetailPlaceVmContract {
 
         fun onQuizAnswerClick(answer: Answer)
 
+        fun onGoBackClick()
+
     }
 }

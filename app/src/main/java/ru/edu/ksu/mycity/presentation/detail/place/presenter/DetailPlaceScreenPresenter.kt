@@ -69,4 +69,8 @@ class DetailPlaceScreenPresenter(
     override fun onQuizAnswerClick(answer: Answer) {
         vm.currentAnswer.value = answer
     }
+
+    override fun onGoBackClick() {
+        router.backToPlacesList(androidComponent!!)
+    }
 }

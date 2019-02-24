@@ -41,6 +41,7 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
         binding.viewModel = viewModel
 
         binding.detailPlaceScreenShowButton.setOnClickListener(this::showDescriptionClickHandler)
+        binding.detailPlaceAppBar.appbarGoBackBtn.setOnClickListener(this::goBackClickHandler)
     }
 
     override fun createPresenter(): DetailPlaceVmContract.Presenter =
@@ -79,5 +80,9 @@ class DetailPlaceScreenActivity : BaseActivity<DetailPlaceVmContract.Presenter, 
 
     private fun showDescriptionClickHandler(view: View) {
         presenter.onShowDescriptionClick()
+    }
+
+    private fun goBackClickHandler(view: View) {
+        presenter.onGoBackClick()
     }
 }

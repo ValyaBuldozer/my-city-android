@@ -81,4 +81,8 @@ class DetailRouteScreenPresenter(
     override fun onShowRouteClick(routeInfo: RouteInfo) {
         router.showRouteDetail(androidComponent!!, routeInfo)
     }
+
+    override fun onGoBackClick() {
+        router.backToRoutesList(androidComponent!!)
+    }
 }

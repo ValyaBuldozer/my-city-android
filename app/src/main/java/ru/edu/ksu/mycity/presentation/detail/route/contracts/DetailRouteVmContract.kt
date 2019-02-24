@@ -46,5 +46,6 @@ interface DetailRouteVmContract {
 
         fun prevPlaceHandler()
 
+        fun onGoBackClick()
     }
 }
