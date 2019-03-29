@@ -29,6 +29,9 @@ class DetailPlaceScreenVm : BaseViewModel(), DetailPlaceVmContract.ViewModel {
     override var placeDescription: MutableLiveData<String?> =
         MutableLiveData<String?>().apply { value = "" }
 
+    override var placeAddress: MutableLiveData<String?> =
+        MutableLiveData<String?>().apply { value = "" }
+
     override var placeRoutes: MutableLiveData<List<RouteInfo>?> =
         MutableLiveData<List<RouteInfo>?>().apply { value = emptyList() }
 

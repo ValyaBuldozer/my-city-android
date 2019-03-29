@@ -19,5 +19,7 @@ interface RoutesVmContract {
 
     interface Presenter : ViperPresenter<ViewModel> {
         fun onRouteSelected(routeInfo: RouteInfo)
+
+        fun onGoBack()
     }
 }

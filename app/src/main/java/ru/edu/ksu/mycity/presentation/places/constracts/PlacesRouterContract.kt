@@ -10,5 +10,7 @@ interface PlacesRouterContract {
 
     interface Router : ViperRouter<Presenter> {
         fun showPlaceDetailInfo(androidComponent: AndroidComponent, placeInfo: PlaceInfo)
+
+        fun showHome(androidComponent: AndroidComponent)
     }
 }

@@ -19,5 +19,7 @@ interface PlacesVmContract {
 
     interface Presenter : ViperPresenter<ViewModel> {
         fun onPlaceSelected(placeInfo: PlaceInfo)
+
+        fun onGoBack()
     }
 }

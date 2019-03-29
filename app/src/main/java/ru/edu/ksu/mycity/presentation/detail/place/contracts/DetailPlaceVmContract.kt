@@ -24,6 +24,8 @@ interface DetailPlaceVmContract {
 
         var placeDescription: MutableLiveData<String?>
 
+        var placeAddress: MutableLiveData<String?>
+
         var placeRoutes: MutableLiveData<List<RouteInfo>?>
 
         var placeQuizTitle: MutableLiveData<String?>

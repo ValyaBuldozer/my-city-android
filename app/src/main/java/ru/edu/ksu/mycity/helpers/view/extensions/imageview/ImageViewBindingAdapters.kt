@@ -22,12 +22,14 @@ fun ImageView.serverImageUrl(imgUrl: String?, placeholder: Int?) {
     val placeholderId = placeholder ?: R.drawable.item_placeholder
 
     if (imgUrl != null) {
-        val url = HttpUrl.Builder()
+        val urlBuilder = HttpUrl.Builder()
             .scheme(NetworkConfig.SCHEME.value)
             .host(NetworkConfig.HOST.value)
             .port(NetworkConfig.PORT.value.toInt())
-            .addPathSegment(imgUrl)
-            .build()
+
+        imgUrl.split("/").forEach { urlBuilder.addPathSegment(it) }
+
+        val url = urlBuilder.build()
 
         Picasso.get()
             .load(url.url().toString())

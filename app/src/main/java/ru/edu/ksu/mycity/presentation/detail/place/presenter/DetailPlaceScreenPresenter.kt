@@ -42,6 +42,7 @@ class DetailPlaceScreenPresenter(
                 placeDescription.value = place.description
                 placeImagePath.value = place.backgroundImagePath
                 placeRoutes.value = place.routes
+                placeAddress.value = place.address
                 placeQuizTitle.value = place.questionTitle
                 placeQuizAnswers.value = place.answers
             }
@@ -51,6 +52,7 @@ class DetailPlaceScreenPresenter(
                 placeTitle.value = null
                 placeDescription.value = null
                 placeImagePath.value = null
+                placeAddress.value = null
                 placeRoutes.value = emptyList()
                 placeQuizTitle.value = null
                 placeQuizAnswers.value = emptyList()

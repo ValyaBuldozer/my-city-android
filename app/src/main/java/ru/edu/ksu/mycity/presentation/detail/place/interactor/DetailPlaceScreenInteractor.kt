@@ -1,5 +1,6 @@
 package ru.edu.ksu.mycity.presentation.detail.place.interactor
 
+import android.util.Log
 import com.google.gson.Gson
 import okhttp3.Call
 import okhttp3.Callback
@@ -28,6 +29,11 @@ class DetailPlaceScreenInteractor(
                     val jsonString = response.body()!!.string()
                     val placeGsonModel = Gson().fromJson<PlaceGsonModel>(jsonString, PlaceGsonModel::class.java)
                     val place = placeGsonModel.getPresentation()
+
+                    Log.wtf(Log.WARN.toString(), place.description)
+                    place.description.replace("\n\n", "\n")
+                    Log.wtf(Log.WARN.toString(), place.description)
+
 
                     runUi { listener?.obtainedPlaceDetail(place, null) }
                 } catch (e: Exception) {

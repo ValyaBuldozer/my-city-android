@@ -49,4 +49,8 @@ class PlacesScreenPresenter(
     override fun onPlaceSelected(placeInfo: PlaceInfo) {
         router.showPlaceDetailInfo(androidComponent!!, placeInfo)
     }
+
+    override fun onGoBack() {
+        router.showHome(androidComponent!!)
+    }
 }

@@ -10,6 +10,7 @@ data class Place(
     val backgroundImagePath : String,
     val description : String,
     val questionTitle : String,
+    val address: String,
     val routes: List<RouteInfo>,
     val answers: List<Answer>) : ParcelableModel {
 
@@ -25,6 +26,7 @@ data class Place(
         backgroundImagePath = parcel.readString(),
         description = parcel.readString(),
         questionTitle = parcel.readString(),
+        address = parcel.readString(),
         routes = ArrayList<RouteInfo>().apply { parcel.readList(this, RouteInfo::class.java.classLoader) },
         answers = ArrayList<Answer>().apply { parcel.readList(this, Answer::class.java.classLoader) }
     )
@@ -36,6 +38,7 @@ data class Place(
         writeString(backgroundImagePath)
         writeString(description)
         writeString(questionTitle)
+        writeString(address)
         writeList(routes)
         writeList(answers)
     }

@@ -8,6 +8,8 @@ interface RoutesRouterContract {
 
     interface Router : ViperRouter<Presenter> {
         fun showRouteInfo(androidComponent: AndroidComponent, routeInfo: RouteInfo)
+
+        fun showHome(androidComponent: AndroidComponent)
     }
 
     interface Presenter : ViperRouter.Listener {}
