@@ -30,10 +30,7 @@ class DetailPlaceScreenInteractor(
                     val placeGsonModel = Gson().fromJson<PlaceGsonModel>(jsonString, PlaceGsonModel::class.java)
                     val place = placeGsonModel.getPresentation()
 
-                    Log.wtf(Log.WARN.toString(), place.description)
                     place.description.replace("\n\n", "\n")
-                    Log.wtf(Log.WARN.toString(), place.description)
-
 
                     runUi { listener?.obtainedPlaceDetail(place, null) }
                 } catch (e: Exception) {
@@ -42,5 +39,4 @@ class DetailPlaceScreenInteractor(
             }
         })
     }
-
 }

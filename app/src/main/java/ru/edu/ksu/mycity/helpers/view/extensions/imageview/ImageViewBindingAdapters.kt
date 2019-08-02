@@ -41,7 +41,6 @@ fun ImageView.serverImageUrl(imgUrl: String?, placeholder: Int?) {
             .load(placeholderId)
             .into(this)
     }
-
 }
 
 @BindingAdapter("local_image_src")

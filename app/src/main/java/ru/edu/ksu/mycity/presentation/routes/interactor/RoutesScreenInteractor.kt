@@ -24,18 +24,16 @@ class RoutesScreenInteractor(private val networkService: NetworkService) : Route
             }
 
             override fun onResponse(call: Call, response: Response) {
-                runUi {
-                    try {
+                try {
 
-                        val json = response.body()!!.string()
-                        val type = object : TypeToken<List<RouteInfoGsonModel>>() {}.type
-                        val routesGson = Gson().fromJson<List<RouteInfoGsonModel>>(json, type)
-                        val routes = routesGson.map { it.getPresentation() }
+                    val json = response.body()!!.string()
+                    val type = object : TypeToken<List<RouteInfoGsonModel>>() {}.type
+                    val routesGson = Gson().fromJson<List<RouteInfoGsonModel>>(json, type)
+                    val routes = routesGson.map { it.getPresentation() }
 
-                        runUi { listener?.obtainedRoutes(routes, null) }
-                    } catch (e : Exception) {
-                        runUi { listener?.obtainedRoutes(emptyList(), e) }
-                    }
+                    runUi { listener?.obtainedRoutes(routes, null) }
+                } catch (e : Exception) {
+                    runUi { listener?.obtainedRoutes(emptyList(), e) }
                 }
             }
 

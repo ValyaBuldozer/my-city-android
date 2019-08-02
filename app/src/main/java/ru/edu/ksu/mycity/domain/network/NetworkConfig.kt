@@ -5,7 +5,8 @@ enum class NetworkConfig(val value: String) {
     SCHEME("http"),
     HOST("176.119.156.112"),
     PORT("5000"),
+    API("api"),
     ROUTES_PATH("routes"),
-    PLACES_PATH("places"),
+    PLACES_PATH("places")
 
 }
