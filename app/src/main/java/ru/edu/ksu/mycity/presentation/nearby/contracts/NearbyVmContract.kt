@@ -1,24 +1,24 @@
-package ru.edu.ksu.mycity.presentation.routes.contracts
+package ru.edu.ksu.mycity.presentation.nearby.constracts
 
 import androidx.lifecycle.MutableLiveData
-import ru.edu.ksu.mycity.entity.presentation.RouteInfo
+import ru.edu.ksu.mycity.entity.presentation.PlaceInfo
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperPresenter
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel
-import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
-interface RoutesVmContract {
+interface NearbyVmContract {
 
     interface ViewModel : ViperViewModel {
 
-        var state: MutableLiveData<State>
+        var state: MutableLiveData<ViperViewModel.State>
 
         var errorMessage: MutableLiveData<String?>
 
-        var routes: MutableLiveData<List<RouteInfo>>
+        var places: MutableLiveData<List<PlaceInfo>>
+
     }
 
     interface Presenter : ViperPresenter<ViewModel> {
-        fun onRouteSelected(routeInfo: RouteInfo)
+        fun onPlaceSelected(placeInfo: PlaceInfo)
 
         fun onGoBack()
     }

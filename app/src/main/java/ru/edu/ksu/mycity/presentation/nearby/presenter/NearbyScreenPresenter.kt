@@ -1,4 +1,4 @@
-package ru.edu.ksu.mycity.presentation.places.presenter
+package ru.edu.ksu.mycity.presentation.nearby.presenter
 
 import android.util.Log
 import ru.edu.ksu.mycity.entity.presentation.PlaceInfo
@@ -10,7 +10,7 @@ import ru.edu.ksu.mycity.presentation.places.constracts.PlacesVmContract
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperViewModel.State
 
 
-class PlacesScreenPresenter(
+class NearbyScreenPresenter(
     val interactor: PlacesInteractorContract.Interactor,
     val router: PlacesRouterContract.Router
 ) : BasePresenter<PlacesVmContract.ViewModel>(),
@@ -37,7 +37,7 @@ class PlacesScreenPresenter(
     override fun obtainedPlaces(placeInfos: List<PlaceInfo>, error: Throwable?) {
         if (error == null) {
             vm.state.value = State.DATA
-            vm.places.value = placeInfos
+            vm.places.value = placeInfos.filter { it.latitude != null && it.longitude != null }
         } else {
             vm.state.value = State.ERROR
             vm.places.value = emptyList()

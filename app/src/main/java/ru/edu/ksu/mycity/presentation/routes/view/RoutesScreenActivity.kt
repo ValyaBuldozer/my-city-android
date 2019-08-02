@@ -57,6 +57,12 @@ class RoutesScreenActivity : BaseActivity<RoutesVmContract.Presenter, RoutesVmCo
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        presenter.onGoBack()
+    }
+
     override fun createPresenter(): RoutesVmContract.Presenter =
         RoutesScreenPresenter(
             RoutesScreenInteractor(App.get().getNetworkService()),

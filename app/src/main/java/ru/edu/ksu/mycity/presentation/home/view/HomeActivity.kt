@@ -3,6 +3,7 @@ package ru.edu.ksu.mycity.presentation.home.view
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import ru.edu.ksu.mycity.R
@@ -34,6 +35,24 @@ class HomeActivity : AppCompatActivity() {
                 val intent = PlacesScreenActivity.createIntent(this@HomeActivity)
                 this@HomeActivity.startActivity(intent)
             }
+
+            homeMenuElementNearby.root.setOnClickListener {
+                Toast
+                    .makeText(applicationContext, "Ещё не реализовано...", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+            homeMenuAppbar.appbarMenuBtn.setOnClickListener {
+                Toast
+                    .makeText(applicationContext, "Ещё не реализовано...", Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        return
     }
 }

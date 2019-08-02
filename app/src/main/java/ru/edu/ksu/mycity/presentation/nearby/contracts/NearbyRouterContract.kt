@@ -1,10 +1,10 @@
-package ru.edu.ksu.mycity.presentation.places.constracts
+package ru.edu.ksu.mycity.presentation.nearby.constracts
 
 import ru.edu.ksu.mycity.entity.presentation.PlaceInfo
 import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.helpers.arch.contracts.ViperRouter
 
-interface PlacesRouterContract {
+interface NearbyRouterContract {
 
     interface Presenter : ViperRouter.Listener { }
 

@@ -4,6 +4,7 @@ import ru.edu.ksu.mycity.entity.presentation.RouteInfo
 import ru.edu.ksu.mycity.helpers.arch.base.BaseRouter
 import ru.edu.ksu.mycity.helpers.arch.contracts.AndroidComponent
 import ru.edu.ksu.mycity.presentation.detail.route.view.DetailRouteScreenActivity
+import ru.edu.ksu.mycity.presentation.home.view.HomeActivity
 import ru.edu.ksu.mycity.presentation.routes.contracts.RoutesRouterContract
 
 class RoutesScreenRouter : RoutesRouterContract.Router, BaseRouter<RoutesRouterContract.Presenter>() {
@@ -13,4 +14,9 @@ class RoutesScreenRouter : RoutesRouterContract.Router, BaseRouter<RoutesRouterC
         activity.startActivity(intent)
     }
 
+    override fun showHome(androidComponent: AndroidComponent) {
+        val activity = androidComponent.activity
+        val intent = HomeActivity.createIntent(activity)
+        activity.startActivity(intent)
+    }
 }

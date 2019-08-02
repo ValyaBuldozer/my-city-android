@@ -47,6 +47,12 @@ class PlacesScreenActivity : BaseActivity<PlacesVmContract.Presenter, PlacesVmCo
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        presenter.onGoBack()
+    }
+
     override fun createPresenter(): PlacesVmContract.Presenter = PlacesScreenPresenter(
         PlacesScreenInteractor(App.get().getNetworkService()),
         PlacesScreenRouter()

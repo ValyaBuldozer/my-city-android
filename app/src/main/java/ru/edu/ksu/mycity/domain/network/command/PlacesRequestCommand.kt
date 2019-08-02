@@ -13,6 +13,7 @@ class PlacesRequestCommand() : RpcCommand {
             .scheme(NetworkConfig.SCHEME.value)
             .host(NetworkConfig.HOST.value)
             .port(NetworkConfig.PORT.value.toInt())
+            .addPathSegment(NetworkConfig.API.value)
             .addPathSegment(NetworkConfig.PLACES_PATH.value)
             .build()
 

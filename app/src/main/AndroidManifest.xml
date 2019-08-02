@@ -14,7 +14,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".presentation.home.view.HomeActivity">
+        <activity
+                android:name=".presentation.home.view.HomeActivity"
+                android:noHistory="true">
         </activity>
         <activity
                 android:name=".presentation.splashscreen.SplashScreenActivity"
@@ -25,13 +27,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.routes.view.RoutesScreenActivity">
+        <activity
+                android:name=".presentation.routes.view.RoutesScreenActivity"
+                android:parentActivityName=".presentation.home.view.HomeActivity">
         </activity>
-        <activity android:name=".presentation.places.view.PlacesScreenActivity">
+        <activity
+                android:name=".presentation.places.view.PlacesScreenActivity"
+                android:parentActivityName=".presentation.home.view.HomeActivity">
         </activity>
-        <activity android:name=".presentation.detail.place.view.DetailPlaceScreenActivity">
+        <activity
+                android:name=".presentation.detail.place.view.DetailPlaceScreenActivity"
+                android:parentActivityName=".presentation.places.view.PlacesScreenActivity">
         </activity>
-        <activity android:name=".presentation.detail.route.view.DetailRouteScreenActivity">
+        <activity
+                android:name=".presentation.detail.route.view.DetailRouteScreenActivity"
+                android:parentActivityName=".presentation.routes.view.RoutesScreenActivity">
+        </activity>
+        <activity android:name=".presentation.nearby.view.NearbyScreenActivity">
         </activity>
     </application>
 

@@ -48,4 +48,7 @@ class RoutesScreenPresenter(
         router.showRouteInfo(androidComponent!!, routeInfo)
     }
 
+    override fun onGoBack() {
+        router.showHome(androidComponent!!)
+    }
 }

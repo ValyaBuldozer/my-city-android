@@ -3,9 +3,10 @@ package ru.edu.ksu.mycity.domain.network
 enum class NetworkConfig(val value: String) {
 
     SCHEME("http"),
-    HOST("10.0.2.2"),
+    HOST("176.119.156.112"),
     PORT("5000"),
+    API("api"),
     ROUTES_PATH("routes"),
-    PLACES_PATH("places"),
+    PLACES_PATH("places")
 
 }
